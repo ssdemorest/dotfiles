@@ -1,0 +1,7 @@
+alias update-all='ujust update && distrobox enter arch-apps -- "yay -Syu --noconfirm" && flatpak update -y'
+alias la='ls -a'
+alias arch-run='distrobox enter Arch --no-tty --'
+
+
+# filen-cli
+PATH=$PATH:~/.filen-cli/bin

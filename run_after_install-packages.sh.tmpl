@@ -1,0 +1,12 @@
+# Brewfile hash: {{ include "dot_Brewfile" | sha256sum }}
+#!/bin/bash
+
+# Only run if Brewfile exists
+if [ -f "$HOME/.Brewfile" ]; then
+    echo "Checking for missing Homebrew packages..."
+    # --no-lock prevents creating a Brewfile.lock.json in your home
+    brew bundle install --global --no-lock
+else
+    echo "No Brewfile found, skipping brew bundle."
+fi
+
