@@ -1,2 +1,5 @@
 [init]
 	defaultBranch = main
+[user]
+	email = ssdemorest@gmail.com
+	name = Sean Demorest
