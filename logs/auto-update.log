@@ -1,0 +1,10 @@
+=== 2026-01-21 15:37:23 === brew bundle dump --global --force
+./auto-update.sh: line 11: brew bundle dump --global --force: command not found
+=== 2026-01-21 15:37:23 === /usr/bin/distrobox upgrade -a
+./auto-update.sh: line 11: /usr/bin/distrobox upgrade -a: No such file or directory
+=== 2026-01-21 15:37:23 === /usr/bin/distrobox enter Arch --no-tty -- yay -Syu --noconfirm
+./auto-update.sh: line 11: /usr/bin/distrobox enter Arch --no-tty -- yay -Syu --noconfirm: No such file or directory
+=== 2026-01-21 15:37:23 === /usr/bin/flatpak update -y
+./auto-update.sh: line 11: /usr/bin/flatpak update -y: No such file or directory
+=== 2026-01-21 15:37:23 === chezmoi status
+./auto-update.sh: line 11: chezmoi status: command not found
