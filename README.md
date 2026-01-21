@@ -1,8 +1,8 @@
-# 📄 README.md for your Dotfiles
+# About dotfiles repo
 
 ## 🚀 1. The Homebrew & Chezmoi Workflow
 
-Since autoCommit and autoPush are enabled, your workflow is highly automated.
+A Highly automated workflow for maintaining brew and dotfile state w/ Chezmoi
 
 To update your packages and save them:
 
@@ -10,7 +10,7 @@ To update your packages and save them:
 2. **Update the Brewfile**: Run `brew bundle dump --global --force`.
 3. **Sync to Remote**: Run `chezmoi add ~/.Brewfile`.
 
-Because of your config, this will automatically commit and push the new Brewfile to your remote.
+Because of the Chezmoi configuration toml, this will automatically commit and push the new Brewfile to remote.
 
 ## ⏪ 2. Restoring & Rolling Back State
 
@@ -47,15 +47,8 @@ brew bundle install --global --cleanup
 
 ## ✅ 4. Startup & Validation
 
-On Bazzite, you want to ensure your sharpening variables and Brew paths are loaded.
-
-### Check Environment Variables (Sharpening)
-
-Run `printenv | grep QT`. You should see:
-```
-QT_SCALE_FACTOR_ROUNDING_POLICY=Round
-QT_FONT_DPI=120  # (if set)
-```
+`~/.local/bin/auto-update.sh` handles regular updates to the brewfile, so the remote is regularly updated with new versions (commits) when the brew state changes.
+This update script also handles updates for flatpaks and yay-managed packages in the Arch distrobox. `auto-update.sh` is managed via the `distrobox-flatpak-update.service` located in `~/.config/systemd/user`
 
 ### Check Brew Integrity
 
@@ -65,10 +58,21 @@ Run `brew doctor`. This ensures the `/home/linuxbrew` path is healthy.
 
 Run `chezmoi verify`. If it exits with no output, your home directory exactly matches your tracked config.
 
-## 📥 How to add this README to your Remote
+## 🔧 5. Custom Systemd Services
 
-To ensure this README stays with your code but doesn't clutter your actual `$HOME` directory, follow these steps:
+### btrfs-scrub.service
+A monthly maintenance service that automatically performs Btrfs filesystem integrity checks and cleanup:
 
-1. Create the file in the chezmoi source directory
-2. Add it to version control
-3. It will be tracked but not applied to your home directory
+- **Purpose**: Runs `btrfs scrub` on `/var` to detect and repair data corruption
+- **Balance Check**: Monitors unused space (>10GB threshold) and notifies if a balance is recommended
+- **Notification**: Sends desktop notifications with completion status and recommendations
+- **Script**: Located at `~/.local/bin/btrfs-maint.sh`
+
+### filen-mount.service
+Automatically mounts Filen cloud storage as a local filesystem using rclone:
+
+- **Purpose**: Mounts Filen cloud storage to `~/FilenDrive` using rclone
+- **VFS Caching**: Uses full caching mode with 10GB max cache and 24-hour cache age
+- **Network Dependency**: Waits for network connectivity before mounting
+- **Graceful Shutdown**: Properly handles unmounting with 5-minute timeout to ensure uploads complete
+- **Auto-restart**: Restarts on failure to maintain consistent cloud storage access
