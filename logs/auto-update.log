@@ -1,29 +1,53 @@
 
-=== 2026-01-22 16:58:40 === brew bundle dump --global --force
-=== 2026-01-22 16:58:42 === /usr/bin/distrobox upgrade -a
+=== 2026-01-23 17:52:45 === brew bundle dump --global --force
+=== 2026-01-23 17:52:47 === /usr/bin/distrobox upgrade -a
 [1;31m Upgrading Arch...
-[0mStarting container...                   	[32m [ OK ]
-[0mInstalling basic packages...            	[32m [ OK ]
-[0mSetting up devpts mounts...             	[32m [ OK ]
-[0mSetting up read-only mounts...          	[32m [ OK ]
-[0mSetting up read-write mounts...         	[32m [ OK ]
-[0mSetting up host's sockets integration...	[32m [ OK ]
-[0mIntegrating host's themes, icons, fonts...	[32m [ OK ]
-[0mSetting up distrobox profile...         	[32m [ OK ]
-[0mSetting up sudo...                      	[32m [ OK ]
-[0mSetting up user's group list...         	[32m [ OK ]
-[0mSetting up skel...                      	[32m [ OK ]
-[0m
-Container Setup Complete!
-distrobox: Installing basic packages...
+[0mdistrobox: Installing basic packages...
 /usr/bin/pacman
 /usr/bin/pacman
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
 :: Starting full system upgrade...
- there is nothing to do
-=== 2026-01-22 16:58:43 === /usr/bin/distrobox enter Arch --no-tty -- yay -Syu --noconfirm
+resolving dependencies...
+looking for conflicting packages...
+
+Package (5)                        Old Version  New Version  Net Change  Download Size
+
+core/libevent                      2.1.12-4     2.1.12-5       0.00 MiB       0.26 MiB
+extra/mesa                         1:25.3.3-3   1:25.3.4-1    -0.01 MiB      12.51 MiB
+extra/vulkan-intel                 1:25.3.3-3   1:25.3.4-1     0.00 MiB       4.43 MiB
+extra/vulkan-mesa-implicit-layers  1:25.3.3-3   1:25.3.4-1     0.00 MiB       0.05 MiB
+extra/vulkan-radeon                1:25.3.3-3   1:25.3.4-1     0.00 MiB       3.05 MiB
+
+Total Download Size:    20.31 MiB
+Total Installed Size:  105.19 MiB
+Net Upgrade Size:        0.00 MiB
+
+:: Proceed with installation? [Y/n] 
+:: Retrieving packages...
+ mesa-1:25.3.4-1-x86_64 downloading...
+ vulkan-intel-1:25.3.4-1-x86_64 downloading...
+ vulkan-radeon-1:25.3.4-1-x86_64 downloading...
+ libevent-2.1.12-5-x86_64 downloading...
+ vulkan-mesa-implicit-layers-1:25.3.4-1-x86_64 downloading...
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+:: Running pre-transaction hooks...
+(1/1) Distrobox hook /etc/distrobox-pre-hook.sh...
+:: Processing package changes...
+upgrading libevent...
+upgrading mesa...
+upgrading vulkan-mesa-implicit-layers...
+upgrading vulkan-intel...
+upgrading vulkan-radeon...
+:: Running post-transaction hooks...
+(1/3) Arming ConditionNeedsUpdate...
+(2/3) Distrobox hook /etc/distrobox-post-hook.sh...
+(3/3) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
+=== 2026-01-23 17:52:49 === /usr/bin/distrobox enter Arch --no-tty -- yay -Syu --noconfirm
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
@@ -31,16 +55,16 @@ distrobox: Installing basic packages...
 :: [1mSearching databases for updates...[0m
  -> Missing AUR Debug Packages: android-messages-desktop-bin-debug  paru-debug
 :: 2 packages to upgrade/install.
-2  aur/github-copilot-cli  0.0.388-1 -> 0.0.392-1
-1  aur/opencode            1.1.30-1  -> 1.1.32-1
+2  aur/github-copilot-cli  0.0.392-1 -> 0.0.393-1
+1  aur/opencode            1.1.32-1  -> 1.1.34-1
 ==> Packages to exclude: (eg: "1 2 3", "1-3", "^4" or repo name)
  -> Excluding packages may cause partial upgrades and break systems
 ==> 
-AUR Explicit (2): opencode-1.1.32-1, github-copilot-cli-0.0.392-1
+AUR Explicit (2): opencode-1.1.34-1, github-copilot-cli-0.0.393-1
 :: [1m(1/2) Downloaded PKGBUILD: opencode[0m
 :: [1m(2/2) Downloaded PKGBUILD: github-copilot-cli[0m
-  2 github-copilot-cli                       (Installed) (Build Files Exist)
-  1 opencode                                 (Installed) (Build Files Exist)
+  2 opencode                                 (Installed) (Build Files Exist)
+  1 github-copilot-cli                       (Installed) (Build Files Exist)
 ==> Packages to cleanBuild?
 ==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
 ==> 
@@ -49,52 +73,52 @@ AUR Explicit (2): opencode-1.1.32-1, github-copilot-cli-0.0.392-1
 ==> Diffs to show?
 ==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
 ==> 
-==> Making package: github-copilot-cli 0.0.392-1 (Thu 22 Jan 2026 04:58:46 PM PST)
+==> Making package: opencode 1.1.34-1 (Fri 23 Jan 2026 05:52:53 PM PST)
 ==> Retrieving sources...
-  -> Downloading copilot-0.0.392.tgz...
-  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
-                                 Dload  Upload  Total   Spent   Left   Speed
-  0      0   0      0   0      0      0      0                              0 53 42.54M  53 22.60M   0      0 22.62M      0   00:01           00:01 22.60M100 42.54M 100 42.54M   0      0 24.79M      0   00:01   00:01         22.60M100 42.54M 100 42.54M   0      0 24.79M      0   00:01   00:01         22.60M100 42.54M 100 42.54M   0      0 24.79M      0   00:01   00:01         22.60M
-  -> Downloading README-0.0.392.md...
-  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
-                                 Dload  Upload  Total   Spent   Left   Speed
-  0      0   0      0   0      0      0      0                              0100   5781 100   5781   0      0  21191      0                              0100   5781 100   5781   0      0  21190      0                              0100   5781 100   5781   0      0  21189      0                              0
-  -> Downloading LICENSE-0.0.392...
-  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
-                                 Dload  Upload  Total   Spent   Left   Speed
-  0      0   0      0   0      0      0      0                              0100   2901 100   2901   0      0  10640      0                              0100   2901 100   2901   0      0  10640      0                              0100   2901 100   2901   0      0  10640      0                              0
-==> WARNING: Skipping verification of source file PGP signatures.
-==> Validating source files with b2sums...
-    copilot-0.0.392.tgz ... Passed
-    README-0.0.392.md ... Passed
-    LICENSE-0.0.392 ... Passed
-==> Making package: opencode 1.1.32-1 (Thu 22 Jan 2026 04:58:49 PM PST)
-==> Retrieving sources...
-  -> Downloading opencode-1.1.32.tar.gz...
+  -> Downloading opencode-1.1.34.tar.gz...
   % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
                                  Dload  Upload  Total   Spent   Left   Speed
   0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0
-  0      0   0      0   0      0      0      0                              0100  9.38M   0  9.38M   0      0  7.40M      0           00:01          9.38M100 40.10M   0 40.10M   0      0 17.69M      0           00:02         20.06M100 66.50M   0 66.50M   0      0 20.36M      0           00:03         22.17M100 71.72M   0 71.72M   0      0 19.84M      0           00:03         22.17M100 71.72M   0 71.72M   0      0 19.84M      0           00:03         22.17M100 71.72M   0 71.72M   0      0 19.84M      0           00:03         22.17M
+  0      0   0      0   0      0      0      0                              0 12 71.73M  12  9.25M   0      0  7.22M      0   00:09   00:01   00:08  9.25M 53 71.73M  53 38.43M   0      0 16.86M      0   00:04   00:02   00:02 19.22M 97 71.73M  97 70.25M   0      0 21.43M      0   00:03   00:03         23.43M100 71.73M 100 71.73M   0      0 21.59M      0   00:03   00:03         23.43M100 71.73M 100 71.73M   0      0 21.59M      0   00:03   00:03         23.43M100 71.73M 100 71.73M   0      0 21.59M      0   00:03   00:03         23.43M
 ==> WARNING: Skipping verification of source file PGP signatures.
 ==> Validating source files with sha256sums...
-    opencode-1.1.32.tar.gz ... Skipped
-:: [1m(1/2) Parsing SRCINFO: github-copilot-cli[0m
-:: [1m(2/2) Parsing SRCINFO: opencode[0m
-==> Making package: github-copilot-cli 0.0.392-1 (Thu 22 Jan 2026 04:58:53 PM PST)
+    opencode-1.1.34.tar.gz ... Skipped
+==> Making package: github-copilot-cli 0.0.393-1 (Fri 23 Jan 2026 05:52:56 PM PST)
+==> Retrieving sources...
+  -> Downloading copilot-0.0.393.tgz...
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0 39 42.54M  39 16.59M   0      0 16.61M      0   00:02           00:02 16.59M100 42.54M 100 42.54M   0      0 23.94M      0   00:01   00:01         16.59M100 42.54M 100 42.54M   0      0 23.94M      0   00:01   00:01         16.59M100 42.54M 100 42.54M   0      0 23.94M      0   00:01   00:01         16.59M
+  -> Downloading README-0.0.393.md...
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0100   5781 100   5781   0      0  28882      0                              0100   5781 100   5781   0      0  28880      0                              0100   5781 100   5781   0      0  28878      0                              0
+  -> Downloading LICENSE-0.0.393...
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0100   2901 100   2901   0      0  16681      0                              0100   2901 100   2901   0      0  16680      0                              0100   2901 100   2901   0      0  16679      0                              0
+==> WARNING: Skipping verification of source file PGP signatures.
+==> Validating source files with b2sums...
+    copilot-0.0.393.tgz ... Passed
+    README-0.0.393.md ... Passed
+    LICENSE-0.0.393 ... Passed
+:: [1m(1/2) Parsing SRCINFO: opencode[0m
+:: [1m(2/2) Parsing SRCINFO: github-copilot-cli[0m
+==> Making package: github-copilot-cli 0.0.393-1 (Fri 23 Jan 2026 05:52:59 PM PST)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> Retrieving sources...
-  -> Found copilot-0.0.392.tgz
-  -> Found README-0.0.392.md
-  -> Found LICENSE-0.0.392
+  -> Found copilot-0.0.393.tgz
+  -> Found README-0.0.393.md
+  -> Found LICENSE-0.0.393
 ==> Validating source files with b2sums...
-    copilot-0.0.392.tgz ... Passed
-    README-0.0.392.md ... Passed
-    LICENSE-0.0.392 ... Passed
+    copilot-0.0.393.tgz ... Passed
+    README-0.0.393.md ... Passed
+    LICENSE-0.0.393 ... Passed
 ==> Removing existing $srcdir/ directory...
 ==> Extracting sources...
 ==> Sources are ready.
-==> Making package: github-copilot-cli 0.0.392-1 (Thu 22 Jan 2026 04:58:53 PM PST)
+==> Making package: github-copilot-cli 0.0.393-1 (Fri 23 Jan 2026 05:52:59 PM PST)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> WARNING: Using existing $srcdir/ tree
@@ -112,7 +136,6 @@ AUR Explicit (2): opencode-1.1.32-1, github-copilot-cli-0.0.392-1
   -> Purging unwanted files...
   -> Copying source files needed for debug symbols...
   -> Compressing man and info pages...
-libfakeroot internal error: payload not recognized!
 ==> Checking for packaging issues...
 ==> Creating package "github-copilot-cli"...
   -> Generating .PKGINFO file...
@@ -121,27 +144,27 @@ libfakeroot internal error: payload not recognized!
   -> Generating .MTREE file...
   -> Compressing package...
 ==> Leaving fakeroot environment.
-==> Finished making: github-copilot-cli 0.0.392-1 (Thu 22 Jan 2026 04:58:59 PM PST)
+==> Finished making: github-copilot-cli 0.0.393-1 (Fri 23 Jan 2026 05:53:03 PM PST)
 ==> Cleaning up...
-==> Making package: opencode 1.1.32-1 (Thu 22 Jan 2026 04:58:59 PM PST)
+==> Making package: opencode 1.1.34-1 (Fri 23 Jan 2026 05:53:04 PM PST)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> Retrieving sources...
-  -> Found opencode-1.1.32.tar.gz
+  -> Found opencode-1.1.34.tar.gz
 ==> Validating source files with sha256sums...
-    opencode-1.1.32.tar.gz ... Skipped
+    opencode-1.1.34.tar.gz ... Skipped
 ==> Removing existing $srcdir/ directory...
 ==> Extracting sources...
-  -> Extracting opencode-1.1.32.tar.gz with bsdtar
+  -> Extracting opencode-1.1.34.tar.gz with bsdtar
 ==> Sources are ready.
-==> Making package: opencode 1.1.32-1 (Thu 22 Jan 2026 04:59:00 PM PST)
+==> Making package: opencode 1.1.34-1 (Fri 23 Jan 2026 05:53:05 PM PST)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> WARNING: Using existing $srcdir/ tree
 ==> Starting build()...
 bun install v1.3.5-canary.1 (fa5a5bbe)
 Resolving dependencies
-Resolved, downloaded and extracted [17]
+Resolved, downloaded and extracted [19]
 Saved lockfile
 
 $ husky
@@ -156,10 +179,10 @@ $ husky
 + @aws-sdk/client-s3@3.933.0
 + typescript@5.8.2 (v5.9.3 available)
 
-3605 packages installed [1.81s]
+3607 packages installed [1.81s]
 opencode script {
   "channel": "latest",
-  "version": "1.1.32",
+  "version": "1.1.34",
   "preview": false
 }
 bun add v1.3.5-canary.1 (fa5a5bbe)
@@ -177,7 +200,7 @@ $ husky
 
 installed @opentui/core@0.1.74
 
-392 packages installed [71.00ms]
+392 packages installed [68.00ms]
 bun add v1.3.5-canary.1 (fa5a5bbe)
 Resolving dependencies
 Resolved, downloaded and extracted [1]
@@ -187,7 +210,7 @@ $ husky
 .git can't be found
 installed @parcel/watcher@2.5.1
 
-[56.00ms] done
+[54.00ms] done
 building opencode-linux-x64
 [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
 ==> Entering fakeroot environment...
@@ -204,7 +227,7 @@ building opencode-linux-x64
   -> Generating .MTREE file...
   -> Compressing package...
 ==> Leaving fakeroot environment.
-==> Finished making: opencode 1.1.32-1 (Thu 22 Jan 2026 04:59:03 PM PST)
+==> Finished making: opencode 1.1.34-1 (Fri 23 Jan 2026 05:53:08 PM PST)
 ==> Cleaning up...
 loading packages...
 resolving dependencies...
@@ -212,11 +235,11 @@ looking for conflicting packages...
 
 Package (2)         Old Version  New Version  Net Change
 
-github-copilot-cli  0.0.388-1    0.0.392-1      0.21 MiB
-opencode            1.1.30-1     1.1.32-1       0.00 MiB
+github-copilot-cli  0.0.392-1    0.0.393-1      0.03 MiB
+opencode            1.1.32-1     1.1.34-1       1.06 MiB
 
-Total Installed Size:  368.17 MiB
-Net Upgrade Size:        0.21 MiB
+Total Installed Size:  369.25 MiB
+Net Upgrade Size:        1.09 MiB
 
 :: Proceed with installation? [Y/n] 
 checking keyring...
@@ -232,26 +255,11 @@ upgrading opencode...
 (1/3) Arming ConditionNeedsUpdate...
 (2/3) Distrobox hook /etc/distrobox-post-hook.sh...
 (3/3) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
-=== 2026-01-22 16:59:05 === /usr/bin/flatpak update -y
+=== 2026-01-23 17:53:09 === /usr/bin/flatpak update -y
 Looking for updates…
 
-
- 1.	   	org.gnome.Platform.Locale	49	u	flathub	< 385.4 MB
- 2.	   	org.gnome.Platform	49	u	flathub	< 405.0 MB
-
-
-Updating 1/2…
-Updating 1/2…                        0%  0 bytes/s
-Updating 1/2… ████████████████████ 100%
-Updating 2/2…
-Updating 2/2…                        0%  0 bytes/s
-Updating 2/2… ██████▍               32%
-Updating 2/2… ██████████            50%
-Updating 2/2… █████████████████     85%  15.7 MB/s
-Updating 2/2… ████████████████████ 100%  18.3 MB/s
-Updating 2/2… ████████████████████ 100%  18.3 MB/s
-Updates complete.
-=== 2026-01-22 16:59:10 === chezmoi status
+Nothing to do.
+=== 2026-01-23 17:53:09 === chezmoi status
 MM .Brewfile
  A README.md
  A logs
