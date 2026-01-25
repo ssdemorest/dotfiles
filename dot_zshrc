@@ -2,6 +2,7 @@ alias update-all='ujust update && distrobox enter arch-apps -- "yay -Syu --nocon
 alias la='ls -a'
 alias arch-run='distrobox enter Arch --no-tty --'
 alias grep=rg
+alias kubectl="minikube kubectl --"
 # Hello World!
 
 
