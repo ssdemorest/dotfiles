@@ -1,6 +1,6 @@
 
-=== 2026-01-24 17:16:52 === brew bundle dump --global --force
-=== 2026-01-24 17:16:54 === /usr/bin/distrobox upgrade -a
+=== 2026-01-24 21:52:23 === brew bundle dump --global --force
+=== 2026-01-24 21:52:24 === /usr/bin/distrobox upgrade -a
 [1;31m Upgrading Arch...
 [0mdistrobox: Installing basic packages...
 /usr/bin/pacman
@@ -17,7 +17,7 @@
 Updating and loading repositories:
 Repositories loaded.
 Nothing to do.
-=== 2026-01-24 17:16:55 === /usr/bin/distrobox enter Arch --no-tty -- yay -Syu --noconfirm
+=== 2026-01-24 21:52:26 === /usr/bin/distrobox enter Arch --no-tty -- yay -Syu --noconfirm
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
@@ -25,13 +25,16 @@ Nothing to do.
 :: [1mSearching databases for updates...[0m
  -> Missing AUR Debug Packages: android-messages-desktop-bin-debug  paru-debug
  there is nothing to do
-=== 2026-01-24 17:16:57 === /usr/bin/distrobox enter Arch --no-tty -- sudo /usr/bin/dnf-automatic --installupdates
-sudo: /usr/bin/dnf-automatic: command not found
-=== 2026-01-24 17:16:57 === /usr/bin/flatpak update -y
+=== 2026-01-24 21:52:28 === /usr/bin/distrobox enter Fedora -- sudo dnf update -y
+Updating and loading repositories:
+Repositories loaded.
+Nothing to do.
+=== 2026-01-24 21:52:28 === /usr/bin/flatpak update -y
 Looking for updates…
 
 Nothing to do.
-=== 2026-01-24 17:16:57 === chezmoi status
+=== 2026-01-24 21:52:28 === chezmoi status
+MM .Brewfile
  A README.md
  A logs
  A logs/auto-update.log
