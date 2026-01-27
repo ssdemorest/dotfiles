@@ -1,51 +1,39 @@
 
-=== 2026-01-26 20:58:14 === brew bundle dump --global --force
-=== 2026-01-26 20:58:16 === /usr/bin/distrobox upgrade -a
+=== 2026-01-26 21:30:15 === brew bundle dump --global --force
+=== 2026-01-26 21:30:17 === /usr/bin/distrobox upgrade -a
 [1;31m Upgrading arch...
-[0mStarting container...                   	[32m [ OK ]
-[0mInstalling basic packages...            	[32m [ OK ]
-[0mSetting up devpts mounts...             	[32m [ OK ]
-[0mSetting up read-only mounts...          	[32m [ OK ]
-[0mSetting up read-write mounts...         	[32m [ OK ]
-[0mSetting up host's sockets integration...	[32m [ OK ]
-[0mIntegrating host's themes, icons, fonts...	[32m [ OK ]
-[0mSetting up distrobox profile...         	[32m [ OK ]
-[0mSetting up sudo...                      	[32m [ OK ]
-[0mSetting up user's group list...         	[32m [ OK ]
-[0m
-Container Setup Complete!
-distrobox: Installing basic packages...
+[0mdistrobox: Installing basic packages...
 /usr/bin/pacman
 /usr/bin/pacman
 :: Synchronizing package databases...
-error: failed to synchronize all databases (no servers configured for repository)
-Error: An error occurred
-=== 2026-01-26 20:58:17 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
-:: Synchronizing package databases...
-error: failed to synchronize all databases (no servers configured for repository)
- -> error refreshing databases - exit status 1
-=== 2026-01-26 20:58:17 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
-Starting container...                   	[32m [ OK ]
-[0mInstalling basic packages...            	[32m [ OK ]
-[0mSetting up devpts mounts...             	[32m [ OK ]
-[0mSetting up read-only mounts...          	[32m [ OK ]
-[0mSetting up read-write mounts...         	[32m [ OK ]
-[0mSetting up host's sockets integration...	[32m [ OK ]
-[0mIntegrating host's themes, icons, fonts...	[32m [ OK ]
-[0mSetting up distrobox profile...         	[32m [ OK ]
-[0mSetting up sudo...                      	[32m [ OK ]
-[0mSetting up user's group list...         	[32m [ OK ]
-[0m
-Container Setup Complete!
+ core downloading...
+ extra downloading...
+:: Starting full system upgrade...
+ there is nothing to do
+[1;31m Upgrading fedora...
+[0mdistrobox: Installing basic packages...
+/usr/sbin/dnf
+/usr/sbin/dnf
 Updating and loading repositories:
 Repositories loaded.
 Nothing to do.
-=== 2026-01-26 20:58:22 === /usr/bin/flatpak update -y
+=== 2026-01-26 21:30:18 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
+:: Synchronizing package databases...
+ core downloading...
+ extra downloading...
+:: [1mSearching AUR for updates...[0m
+:: [1mChecking development packages...[0m
+:: [1mSearching databases for updates...[0m
+ there is nothing to do
+=== 2026-01-26 21:30:19 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
+Updating and loading repositories:
+Repositories loaded.
+Nothing to do.
+=== 2026-01-26 21:30:19 === /usr/bin/flatpak update -y
 Looking for updates…
 
 Nothing to do.
-=== 2026-01-26 20:58:22 === chezmoi status
-MM .zshrc
+=== 2026-01-26 21:30:19 === chezmoi status
  A README.md
  A logs
  A logs/auto-update.log
