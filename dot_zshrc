@@ -3,6 +3,7 @@ alias la='ls -a'
 alias arch-run='distrobox enter Arch --no-tty --'
 alias grep=rg
 alias kubectl="minikube kubectl --"
+alias vi=vim
 # Hello World!
 
 
