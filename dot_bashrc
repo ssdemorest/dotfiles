@@ -37,3 +37,6 @@ alias update-all='ujust update && distrobox enter arch-apps -- "yay -Syu --nocon
 
 # filen-cli
 PATH=$PATH:~/.filen-cli/bin
+
+# opencode
+export PATH=/home/ssdemorest/.opencode/bin:$PATH
