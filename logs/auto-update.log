@@ -1,6 +1,6 @@
 
-=== 2026-01-29 20:05:31 === brew bundle dump --global --force
-=== 2026-01-29 20:05:33 === /usr/bin/distrobox upgrade -a
+=== 2026-01-30 13:26:31 === brew bundle dump --global --force
+=== 2026-01-30 13:26:32 === /usr/bin/distrobox upgrade -a
 [1;31m Upgrading arch...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -24,19 +24,21 @@ distrobox: Installing basic packages...
 resolving dependencies...
 looking for conflicting packages...
 
-Package (2)   Old Version  New Version  Net Change  Download Size
+Package (3)        Old Version  New Version  Net Change  Download Size
 
-extra/avahi   1:0.9rc2-3   1:0.9rc3-1     0.04 MiB       0.43 MiB
-extra/libxmu  1.3.0-1      1.3.1-1        0.00 MiB       0.07 MiB
+core/gettext       0.26-1       1.0-1          4.96 MiB       3.20 MiB
+core/libunistring  1.3-1        1.4.1-1        0.04 MiB       0.71 MiB
+core/procps-ng     4.0.5-3      4.0.6-1        0.18 MiB       0.97 MiB
 
-Total Download Size:   0.50 MiB
-Total Installed Size:  2.32 MiB
-Net Upgrade Size:      0.04 MiB
+Total Download Size:    4.88 MiB
+Total Installed Size:  26.06 MiB
+Net Upgrade Size:       5.18 MiB
 
 :: Proceed with installation? [Y/n] 
 :: Retrieving packages...
- avahi-1:0.9rc3-1-x86_64 downloading...
- libxmu-1.3.1-1-x86_64 downloading...
+ gettext-1.0-1-x86_64 downloading...
+ procps-ng-4.0.6-1-x86_64 downloading...
+ libunistring-1.4.1-1-x86_64 downloading...
 checking keyring...
 checking package integrity...
 loading package files...
@@ -44,16 +46,14 @@ checking for file conflicts...
 :: Running pre-transaction hooks...
 (1/1) Distrobox hook /etc/distrobox-pre-hook.sh...
 :: Processing package changes...
-upgrading avahi...
-upgrading libxmu...
+upgrading libunistring...
+upgrading gettext...
+upgrading procps-ng...
 :: Running post-transaction hooks...
-(1/7) Creating system user accounts...
-(2/7) Reloading system manager configuration...
-(3/7) Restarting marked services...
-(4/7) Arming ConditionNeedsUpdate...
-(5/7) Reloading system bus configuration...
-(6/7) Distrobox hook /etc/distrobox-post-hook.sh...
-(7/7) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
+(1/4) Arming ConditionNeedsUpdate...
+(2/4) Distrobox hook /etc/distrobox-post-hook.sh...
+(3/4) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
+(4/4) Updating the info directory file...
 [1;31m Upgrading fedora...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -72,63 +72,260 @@ distrobox: Installing basic packages...
 /usr/sbin/dnf
 Updating and loading repositories:
 Repositories loaded.
-Package               Arch   Version         Repository      Size
-Upgrading:
- alsa-lib             x86_64 1.2.15.3-1.fc42 updates      1.5 MiB
-   replacing alsa-lib x86_64 1.2.15.1-1.fc42 updates      1.5 MiB
-
-Transaction Summary:
- Upgrading:          1 package
- Replacing:          1 package
-
-Total size of inbound packages is 541 KiB. Need to download 541 KiB.
-After this operation, 168 B extra will be used (install 1 MiB, remove 1 MiB).
-[1/1] alsa-lib-0:1.2.15.3-1.fc42.x86_64 100% |   1.4 MiB/s | 541.4 KiB |  00m00s
---------------------------------------------------------------------------------
-[1/1] Total                             100% | 965.1 KiB/s | 541.4 KiB |  00m01s
-Running transaction
-[1/4] Verify package files              100% |   1.0 KiB/s |   1.0   B |  00m00s
-[2/4] Prepare transaction               100% |  62.0   B/s |   2.0   B |  00m00s
-[3/4] Upgrading alsa-lib-0:1.2.15.3-1.f 100% |  69.9 MiB/s |   1.5 MiB |  00m00s
-[4/4] Removing alsa-lib-0:1.2.15.1-1.fc 100% | 264.0   B/s | 101.0   B |  00m00s
-Complete!
-=== 2026-01-29 20:05:42 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
+Nothing to do.
+=== 2026-01-30 13:26:39 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
 :: [1mSearching AUR for updates...[0m
 :: [1mChecking development packages...[0m
 :: [1mSearching databases for updates...[0m
- there is nothing to do
-=== 2026-01-29 20:05:43 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
+:: 2 dependencies will also be installed for this operation.
+   extra/bats    -> 1.13.0-1
+   extra/scdoc   -> 1.11.4-1
+   (make dependency of arch-update)
+
+:: 1 package to upgrade/install.
+1  aur/arch-update  3.17.7-1 -> 3.17.8-1
+==> Packages to exclude: (eg: "1 2 3", "1-3", "^4" or repo name)
+ -> Excluding packages may cause partial upgrades and break systems
+==> 
+AUR Explicit (1): arch-update-3.17.8-1
+Sync Make Dependency (1): scdoc-1.11.4-1
+Sync Check Dependency (1): bats-1.13.0-1
+:: [1m(1/1) Downloaded PKGBUILD: arch-update[0m
+  1 arch-update                              (Installed) (Build Files Exist)
+==> Packages to cleanBuild?
+==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
+==> 
+  1 arch-update                              (Installed) (Build Files Exist)
+==> Diffs to show?
+==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
+==> 
+==> Making package: arch-update 3.17.8-1 (Fri 30 Jan 2026 01:26:42 PM PST)
+==> Retrieving sources...
+  -> Downloading arch-update-3.17.8.tar.gz...
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0
+  0      0   0      0   0      0      0      0                              0100 104.1k   0 104.1k   0      0 104.8k      0                              0100 104.1k   0 104.1k   0      0 104.8k      0                              0100 104.1k   0 104.1k   0      0 104.8k      0                              0
+==> WARNING: Skipping verification of source file PGP signatures.
+==> Validating source files with sha256sums...
+    arch-update-3.17.8.tar.gz ... Passed
+:: [1m(1/1) Parsing SRCINFO: arch-update[0m
+:: Synchronizing package databases...
+ core downloading...
+ extra downloading...
+:: Starting full system upgrade...
+resolving dependencies...
+looking for conflicting packages...
+
+Package (3)     New Version  Net Change  Download Size
+
+extra/parallel  20251222-1     0.89 MiB       0.33 MiB
+extra/bats      1.13.0-1       0.15 MiB       0.05 MiB
+extra/scdoc     1.11.4-1       0.03 MiB       0.01 MiB
+
+Total Download Size:   0.39 MiB
+Total Installed Size:  1.07 MiB
+
+:: Proceed with installation? [Y/n] 
+:: Retrieving packages...
+ parallel-20251222-1-any downloading...
+ bats-1.13.0-1-any downloading...
+ scdoc-1.11.4-1-x86_64 downloading...
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+:: Running pre-transaction hooks...
+(1/1) Distrobox hook /etc/distrobox-pre-hook.sh...
+:: Processing package changes...
+installing scdoc...
+installing parallel...
+Optional dependencies for parallel
+    parallel-docs: documentation
+installing bats...
+:: Running post-transaction hooks...
+(1/3) Arming ConditionNeedsUpdate...
+(2/3) Distrobox hook /etc/distrobox-post-hook.sh...
+(3/3) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
+==> Making package: arch-update 3.17.8-1 (Fri 30 Jan 2026 01:26:43 PM PST)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+  -> Found arch-update-3.17.8.tar.gz
+==> Validating source files with sha256sums...
+    arch-update-3.17.8.tar.gz ... Passed
+==> Removing existing $srcdir/ directory...
+==> Extracting sources...
+  -> Extracting arch-update-3.17.8.tar.gz with bsdtar
+==> Starting prepare()...
+# Delete generated man pages
+rm -f "doc/man/arch-update.1"
+rm -f "doc/man/arch-update.conf.5"
+rm -f "doc/man/fr/arch-update.1"
+rm -f "doc/man/fr/arch-update.conf.5"
+# Delete generated translation files
+rm -f po/fr.mo
+rm -f po/sv.mo
+rm -f po/zh_CN.mo
+rm -f po/hu.mo
+rm -f po/de.mo
+rm -f po/pt_BR.mo
+rm -f po/es.mo
+rm -f po/zh_TW.mo
+rm -f po/ru.mo
+==> Sources are ready.
+==> Making package: arch-update 3.17.8-1 (Fri 30 Jan 2026 01:26:44 PM PST)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> WARNING: Using existing $srcdir/ tree
+==> Starting build()...
+# Generate man pages
+scdoc < "doc/man/arch-update.1.scd" > "doc/man/arch-update.1"
+scdoc < "doc/man/arch-update.conf.5.scd" > "doc/man/arch-update.conf.5"
+scdoc < "doc/man/fr/arch-update.1.scd" > "doc/man/fr/arch-update.1"
+scdoc < "doc/man/fr/arch-update.conf.5.scd" > "doc/man/fr/arch-update.conf.5"
+# Generate translation files
+msgfmt po/fr.po -o po/fr.mo
+msgfmt po/sv.po -o po/sv.mo
+msgfmt po/zh_CN.po -o po/zh_CN.mo
+msgfmt po/hu.po -o po/hu.mo
+msgfmt po/de.po -o po/de.mo
+msgfmt po/pt_BR.po -o po/pt_BR.mo
+msgfmt po/es.po -o po/es.mo
+msgfmt po/zh_TW.po -o po/zh_TW.mo
+msgfmt po/ru.po -o po/ru.mo
+==> Starting check()...
+# Run some simple unit tests on basic functions
+bats test/case/basic_functions.bats
+1..2
+ok 1 version
+ok 2 help
+==> Entering fakeroot environment...
+==> Starting package()...
+# Install main script
+install -Dm 755 "src/arch-update.sh" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/bin/arch-update"
+# Install libraries
+install -Dm 755 src/lib/* -t "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/arch-update/lib/"
+# Install icons
+install -Dm 664 res/icons/"arch-update"*.svg -t "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/icons/hicolor/scalable/apps/"
+install -Dm 664 res/icons/"arch-update"_updates-available*.svg -t "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/icons/hicolor/scalable/apps/"
+# Install .desktop files
+install -Dm 644 "res/desktop/arch-update.desktop" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/applications/arch-update.desktop"
+install -Dm 644 "res/desktop/arch-update-tray.desktop" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/applications/arch-update-tray.desktop"
+# Install systemd units
+install -Dm 644 "res/systemd/arch-update.service" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/lib/systemd/user/arch-update.service"
+install -Dm 644 "res/systemd/arch-update.timer" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/lib/systemd/user/arch-update.timer"
+install -Dm 644 "res/systemd/arch-update-tray.service" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/lib/systemd/user/arch-update-tray.service"
+# Install shell completions
+install -Dm 644 "res/completions/arch-update.bash" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/bash-completion/completions/arch-update"
+install -Dm 644 "res/completions/arch-update.zsh" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/zsh/site-functions/_arch-update"
+install -Dm 644 "res/completions/arch-update.fish" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/fish/vendor_completions.d/arch-update.fish"
+# Install man pages
+install -Dm 644 "doc/man/arch-update.1" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/man/man1/arch-update.1"
+install -Dm 644 "doc/man/arch-update.conf.5" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/man/man5/arch-update.conf.5"
+install -Dm 644 "doc/man/fr/arch-update.1" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/man/fr/man1/arch-update.1"
+install -Dm 644 "doc/man/fr/arch-update.conf.5" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/man/fr/man5/arch-update.conf.5"
+# Install translation files
+# Translation files are installed as "Arch-Update.mo" to avoid conflicting with the "arch-update.mo" files shipped by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
+install -Dm 644 po/fr.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/fr/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/sv.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/sv/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/zh_CN.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/zh_CN/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/hu.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/hu/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/de.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/de/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/pt_BR.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/pt_BR/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/es.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/es/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/zh_TW.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/zh_TW/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/ru.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/ru/LC_MESSAGES/Arch-Update.mo"
+# Install documentation
+install -Dm 644 README.md "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/doc/arch-update/README.md"
+install -Dm 644 README-fr.md "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/doc/arch-update/fr/README.md"
+# Install example config
+install -Dm 644 "res/config/arch-update.conf.example" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/arch-update/config/arch-update.conf.example"
+==> Tidying install...
+  -> Removing libtool files...
+  -> Removing static library files...
+  -> Purging unwanted files...
+  -> Stripping unneeded symbols from binaries and libraries...
+  -> Compressing man and info pages...
+==> Checking for packaging issues...
+==> Creating package "arch-update"...
+  -> Generating .PKGINFO file...
+  -> Generating .BUILDINFO file...
+  -> Generating .MTREE file...
+  -> Compressing package...
+==> Leaving fakeroot environment.
+==> Finished making: arch-update 3.17.8-1 (Fri 30 Jan 2026 01:26:44 PM PST)
+==> Cleaning up...
+loading packages...
+resolving dependencies...
+looking for conflicting packages...
+
+Package (1)  Old Version  New Version  Net Change
+
+arch-update  3.17.7-1     3.17.8-1       0.00 MiB
+
+Total Installed Size:  0.28 MiB
+Net Upgrade Size:      0.00 MiB
+
+:: Proceed with installation? [Y/n] 
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+:: Running pre-transaction hooks...
+(1/1) Distrobox hook /etc/distrobox-pre-hook.sh...
+:: Processing package changes...
+upgrading arch-update...
+:: Running post-transaction hooks...
+(1/4) Reloading user manager configuration...
+(2/4) Arming ConditionNeedsUpdate...
+(3/4) Distrobox hook /etc/distrobox-post-hook.sh...
+(4/4) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
+=== 2026-01-30 13:26:44 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
 Updating and loading repositories:
 Repositories loaded.
 Nothing to do.
-=== 2026-01-29 20:05:43 === /usr/bin/flatpak update -y
+=== 2026-01-30 13:26:45 === /usr/bin/flatpak update -y
 Looking for updates…
 
+New org.kde.haruna permissions:
+    file access [1]
 
- 1.	   	org.gnome.TextEditor.Locale	stable	u	flathub	< 545.9 kB (partial)
- 2.	   	org.gnome.TextEditor	stable	u	flathub	< 1.2 MB
+    [1] xdg-data/Trash
+
+
+ 1.	   	org.kde.gwenview.Locale	stable	u	flathub	< 5.5 MB
+ 2.	   	org.kde.gwenview	stable	u	flathub	< 7.7 MB
  3.	   	org.kde.haruna.Locale	stable	u	flathub	< 534.4 kB
  4.	   	org.kde.haruna	stable	u	flathub	< 9.9 MB
+ 5.	   	org.kde.kcalc.Locale	stable	u	flathub	< 555.3 kB
+ 6.	   	org.kde.kcalc	stable	u	flathub	< 1.4 MB
 
 
-Updating 1/4…
-Updating 1/4…                        0%  0 bytes/s
-Updating 1/4… ████████████████████ 100%
-Updating 2/4…
-Updating 2/4…                        0%  0 bytes/s
-Updating 2/4… ████████████████████ 100%
-Updating 3/4…
-Updating 3/4…                        0%  0 bytes/s
-Updating 3/4… ▌                      3%
-Updating 3/4… ████████████████████ 100%
-Updating 4/4…
-Updating 4/4…                        0%  0 bytes/s
-Updating 4/4… ████████████████████ 100%
+Updating 1/6…
+Updating 1/6…                        0%  0 bytes/s
+Updating 1/6… █                      5%
+Updating 1/6… ████████████████████ 100%
+Updating 2/6…
+Updating 2/6…                        0%  0 bytes/s
+Updating 2/6… ████████████████████ 100%
+Updating 3/6…
+Updating 3/6…                        0%  0 bytes/s
+Updating 3/6… ████████████████████ 100%
+Updating 4/6…
+Updating 4/6…                        0%  0 bytes/s
+Updating 4/6… ████████████████████ 100%
+Updating 5/6…
+Updating 5/6…                        0%  0 bytes/s
+Updating 5/6… ████████████████████ 100%
+Updating 6/6…
+Updating 6/6…                        0%  0 bytes/s
+Updating 6/6… ████████████████████ 100%
 Updates complete.
-=== 2026-01-29 20:05:46 === chezmoi status
+=== 2026-01-30 13:26:50 === chezmoi status
  A README.md
  A logs
  A logs/auto-update.log
