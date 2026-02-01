@@ -1,20 +1,8 @@
 
-=== 2026-01-31 13:14:18 === brew bundle dump --global --force
-=== 2026-01-31 13:14:19 === /usr/bin/distrobox upgrade -a
+=== 2026-02-01 00:38:51 === brew bundle dump --global --force
+=== 2026-02-01 00:38:52 === /usr/bin/distrobox upgrade -a
 [1;31m Upgrading arch...
-[0mStarting container...                   	[32m [ OK ]
-[0mInstalling basic packages...            	[32m [ OK ]
-[0mSetting up devpts mounts...             	[32m [ OK ]
-[0mSetting up read-only mounts...          	[32m [ OK ]
-[0mSetting up read-write mounts...         	[32m [ OK ]
-[0mSetting up host's sockets integration...	[32m [ OK ]
-[0mIntegrating host's themes, icons, fonts...	[32m [ OK ]
-[0mSetting up distrobox profile...         	[32m [ OK ]
-[0mSetting up sudo...                      	[32m [ OK ]
-[0mSetting up user's group list...         	[32m [ OK ]
-[0m
-Container Setup Complete!
-distrobox: Installing basic packages...
+[0mdistrobox: Installing basic packages...
 /usr/bin/pacman
 /usr/bin/pacman
 :: Synchronizing package databases...
@@ -24,23 +12,17 @@ distrobox: Installing basic packages...
 resolving dependencies...
 looking for conflicting packages...
 
-Package (4)             Old Version  New Version  Net Change  Download Size
+Package (1)     Old Version  New Version  Net Change  Download Size
 
-extra/python-pyqt6      6.10.2-2     6.10.2-3       0.01 MiB       3.91 MiB
-extra/qt6-base          6.10.1-1     6.10.2-1       0.20 MiB      15.09 MiB
-extra/qt6-svg           6.10.1-1     6.10.2-1       0.01 MiB       0.28 MiB
-extra/qt6-translations  6.10.1-1     6.10.2-1       0.56 MiB       1.95 MiB
+extra/parallel  20251222-1   20260122-1     0.00 MiB       0.33 MiB
 
-Total Download Size:    21.23 MiB
-Total Installed Size:  106.04 MiB
-Net Upgrade Size:        0.77 MiB
+Total Download Size:   0.33 MiB
+Total Installed Size:  0.89 MiB
+Net Upgrade Size:      0.00 MiB
 
 :: Proceed with installation? [Y/n] 
 :: Retrieving packages...
- qt6-base-6.10.2-1-x86_64 downloading...
- python-pyqt6-6.10.2-3-x86_64 downloading...
- qt6-translations-6.10.2-1-any downloading...
- qt6-svg-6.10.2-1-x86_64 downloading...
+ parallel-20260122-1-any downloading...
 checking keyring...
 checking package integrity...
 loading package files...
@@ -48,10 +30,7 @@ checking for file conflicts...
 :: Running pre-transaction hooks...
 (1/1) Distrobox hook /etc/distrobox-pre-hook.sh...
 :: Processing package changes...
-upgrading qt6-translations...
-upgrading qt6-base...
-upgrading python-pyqt6...
-upgrading qt6-svg...
+upgrading parallel...
 :: Running post-transaction hooks...
 (1/3) Arming ConditionNeedsUpdate...
 (2/3) Distrobox hook /etc/distrobox-post-hook.sh...
@@ -74,27 +53,8 @@ distrobox: Installing basic packages...
 /usr/sbin/dnf
 Updating and loading repositories:
 Repositories loaded.
-Package                   Arch   Version        Repository                            Size
-Upgrading:
- openssl-libs             x86_64 1:3.2.6-3.fc42 updates                            7.8 MiB
-   replacing openssl-libs x86_64 1:3.2.6-2.fc42 a0178fed87de4084b1f6e05bdf00b044   7.8 MiB
-
-Transaction Summary:
- Upgrading:          1 package
- Replacing:          1 package
-
-Total size of inbound packages is 2 MiB. Need to download 2 MiB.
-After this operation, 1 KiB will be freed (install 8 MiB, remove 8 MiB).
-[1/1] openssl-libs-1:3.2.6-3.fc42.x86_6 100% |   2.3 MiB/s |   2.3 MiB |  00m01s
---------------------------------------------------------------------------------
-[1/1] Total                             100% |   1.7 MiB/s |   2.3 MiB |  00m01s
-Running transaction
-[1/4] Verify package files              100% | 250.0   B/s |   1.0   B |  00m00s
-[2/4] Prepare transaction               100% |  57.0   B/s |   2.0   B |  00m00s
-[3/4] Upgrading openssl-libs-1:3.2.6-3. 100% | 355.6 MiB/s |   7.8 MiB |  00m00s
-[4/4] Removing openssl-libs-1:3.2.6-2.f 100% | 110.0   B/s |  39.0   B |  00m00s
-Complete!
-=== 2026-01-31 13:14:32 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
+Nothing to do.
+=== 2026-02-01 00:38:59 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
@@ -103,15 +63,27 @@ Complete!
 :: [1mSearching databases for updates...[0m
  -> Flagged Out Of Date AUR Packages: neofetch
  there is nothing to do
-=== 2026-01-31 13:14:33 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
+=== 2026-02-01 00:39:00 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
 Updating and loading repositories:
 Repositories loaded.
 Nothing to do.
-=== 2026-01-31 13:14:33 === /usr/bin/flatpak update -y
+=== 2026-02-01 00:39:01 === /usr/bin/flatpak update -y
 Looking for updates…
 
-Nothing to do.
-=== 2026-01-31 13:14:34 === chezmoi status
+
+ 1.	   	com.github.wwmm.easyeffects.Locale	stable	u	flathub	< 340.1 kB (partial)
+ 2.	   	com.github.wwmm.easyeffects	stable	u	flathub	< 57.6 MB
+
+
+Updating 1/2…
+Updating 1/2…                        0%  0 bytes/s
+Updating 1/2… ████████████████████ 100%
+Updating 2/2…
+Updating 2/2…                        0%  0 bytes/s
+Updating 2/2… ████████████████████ 100%
+Updates complete.
+=== 2026-02-01 00:39:03 === chezmoi status
+MM .Brewfile
  A README.md
  A logs
  A logs/auto-update.log
