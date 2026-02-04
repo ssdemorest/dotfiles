@@ -1,6 +1,6 @@
 
-=== 2026-02-02 18:51:23 === brew bundle dump --global --force
-=== 2026-02-02 18:51:25 === /usr/bin/distrobox upgrade -a
+=== 2026-02-03 20:14:10 === brew bundle dump --global --force
+=== 2026-02-03 20:14:12 === /usr/bin/distrobox upgrade -a
 [1;31m Upgrading arch...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -24,29 +24,25 @@ distrobox: Installing basic packages...
 resolving dependencies...
 looking for conflicting packages...
 
-Package (7)             Old Version  New Version  Net Change  Download Size
+Package (5)             Old Version  New Version  Net Change  Download Size
 
-core/archlinux-keyring  20260107-2   20260131-1     0.00 MiB       1.20 MiB
-core/expat              2.7.3-1      2.7.4-1        0.01 MiB       0.12 MiB
-extra/ffmpeg            2:8.0.1-2    2:8.0.1-4      0.00 MiB      14.08 MiB
-extra/git               2.52.0-2     2.53.0-1       0.09 MiB       6.83 MiB
-core/libldap            2.6.10-2     2.6.12-1       0.00 MiB       0.28 MiB
-extra/svt-av1           3.1.2-1      4.0.1-1       -0.35 MiB       1.93 MiB
-extra/tree              2.2.1-1      2.3.1-1        0.01 MiB       0.04 MiB
+core/archlinux-keyring  20260131-1   20260202-1     0.00 MiB       1.20 MiB
+extra/libpipewire       1:1.4.10-1   1:1.4.10-2     0.00 MiB       0.45 MiB
+extra/libpng            1.6.53-2     1.6.54-1       0.00 MiB       0.25 MiB
+extra/libwacom          2.17.0-1     2.18.0-1       0.01 MiB       0.18 MiB
+extra/pipewire          1:1.4.10-1   1:1.4.10-2     0.00 MiB       0.64 MiB
 
-Total Download Size:   24.47 MiB
-Total Installed Size:  84.41 MiB
-Net Upgrade Size:      -0.25 MiB
+Total Download Size:   2.71 MiB
+Total Installed Size:  8.49 MiB
+Net Upgrade Size:      0.01 MiB
 
 :: Proceed with installation? [Y/n] 
 :: Retrieving packages...
- ffmpeg-2:8.0.1-4-x86_64 downloading...
- git-2.53.0-1-x86_64 downloading...
- svt-av1-4.0.1-1-x86_64 downloading...
- archlinux-keyring-20260131-1-any downloading...
- libldap-2.6.12-1-x86_64 downloading...
- expat-2.7.4-1-x86_64 downloading...
- tree-2.3.1-1-x86_64 downloading...
+ archlinux-keyring-20260202-1-any downloading...
+ pipewire-1:1.4.10-2-x86_64 downloading...
+ libpipewire-1:1.4.10-2-x86_64 downloading...
+ libpng-1.6.54-1-x86_64 downloading...
+ libwacom-2.18.0-1-x86_64 downloading...
 checking keyring...
 checking package integrity...
 loading package files...
@@ -54,31 +50,94 @@ checking for file conflicts...
 :: Running pre-transaction hooks...
 (1/1) Distrobox hook /etc/distrobox-pre-hook.sh...
 :: Processing package changes...
-upgrading libldap...
-upgrading expat...
 upgrading archlinux-keyring...
 ==> ERROR: There is no secret key available to sign with.
 ==> Use 'pacman-key --init' to generate a default secret key.
 error: command failed to execute correctly
-upgrading svt-av1...
-upgrading ffmpeg...
-upgrading git...
-upgrading tree...
+upgrading libpipewire...
+upgrading libpng...
+upgrading libwacom...
+upgrading pipewire...
 :: Running post-transaction hooks...
-(1/6) Creating system user accounts...
-(2/6) Reloading system manager configuration...
-(3/6) Restarting marked services...
-(4/6) Arming ConditionNeedsUpdate...
-(5/6) Distrobox hook /etc/distrobox-post-hook.sh...
-(6/6) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
+(1/8) Updating udev hardware database...
+(2/8) Reloading system manager configuration...
+(3/8) Reloading user manager configuration...
+(4/8) Restarting marked services...
+(5/8) Reloading device manager configuration...
+(6/8) Arming ConditionNeedsUpdate...
+(7/8) Distrobox hook /etc/distrobox-post-hook.sh...
+(8/8) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
 [1;31m Upgrading fedora...
-[0mdistrobox: Installing basic packages...
+[0mStarting container...                   	[32m [ OK ]
+[0mInstalling basic packages...            	[32m [ OK ]
+[0mSetting up devpts mounts...             	[32m [ OK ]
+[0mSetting up read-only mounts...          	[32m [ OK ]
+[0mSetting up read-write mounts...         	[32m [ OK ]
+[0mSetting up host's sockets integration...	[32m [ OK ]
+[0mIntegrating host's themes, icons, fonts...	[32m [ OK ]
+[0mSetting up distrobox profile...         	[32m [ OK ]
+[0mSetting up sudo...                      	[32m [ OK ]
+[0mSetting up user's group list...         	[32m [ OK ]
+[0m
+Container Setup Complete!
+distrobox: Installing basic packages...
 /usr/sbin/dnf
 /usr/sbin/dnf
 Updating and loading repositories:
 Repositories loaded.
-Nothing to do.
-=== 2026-02-02 18:51:29 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
+Package                  Arch   Version               Repository           Size
+Upgrading:
+ antigravity             x86_64 1.16.5-1770078955.el8 antigravity-rpm 739.9 MiB
+   replacing antigravity x86_64 1.15.8-1769230927.el8 antigravity-rpm 702.4 MiB
+
+Transaction Summary:
+ Upgrading:          1 package
+ Replacing:          1 package
+
+Total size of inbound packages is 180 MiB. Need to download 180 MiB.
+After this operation, 38 MiB extra will be used (install 740 MiB, remove 702 MiB).
+[1/1] antigravity-0:1.16.5-1770078955.e 100% |  26.9 MiB/s | 179.7 MiB |  00m07s
+--------------------------------------------------------------------------------
+[1/1] Total                             100% |  26.9 MiB/s | 179.7 MiB |  00m07s
+Running transaction
+[1/4] Verify package files              100% |   3.0   B/s |   1.0   B |  00m00s
+[2/4] Prepare transaction               100% |  14.0   B/s |   2.0   B |  00m00s
+[3/4] Upgrading antigravity-0:1.16.5-17 100% | 107.8 MiB/s | 743.9 MiB |  00m07s
+[4/4] Removing antigravity-0:1.15.8-176 100% |  12.3 KiB/s |  16.0 KiB |  00m01s
+Warning: skipped OpenPGP checks for 1 package from repository: antigravity-rpm
+Complete!
+[1;31m Upgrading debian...
+[0mStarting container...                   	[32m [ OK ]
+[0mInstalling basic packages...            	[32m [ OK ]
+[0mSetting up devpts mounts...             	[32m [ OK ]
+[0mSetting up read-only mounts...          	[32m [ OK ]
+[0mSetting up read-write mounts...         	[32m [ OK ]
+[0mSetting up host's sockets integration...	[32m [ OK ]
+[0mIntegrating host's themes, icons, fonts...	[32m [ OK ]
+[0mSetting up distrobox profile...         	[32m [ OK ]
+[0mSetting up sudo...                      	[32m [ OK ]
+[0mSetting up user's group list...         	[32m [ OK ]
+[0m
+Container Setup Complete!
+distrobox: Installing basic packages...
+/usr/bin/apt-get
+/usr/bin/apt-get
+Get:1 http://deb.debian.org/debian stable-backports InRelease [54.0 kB]
+Hit:2 http://deb.debian.org/debian stable InRelease
+Get:3 http://deb.debian.org/debian stable-updates InRelease [47.3 kB]
+Get:4 http://deb.debian.org/debian-security stable-security InRelease [43.4 kB]
+Get:5 http://deb.debian.org/debian stable-backports/main amd64 Packages.diff/Index [63.3 kB]
+Get:6 http://deb.debian.org/debian-security stable-security/main amd64 Packages [98.8 kB]
+Get:7 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-03-1959.51-F-2026-02-03-0759.37.pdiff [1,180 B]
+Get:7 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-03-1959.51-F-2026-02-03-0759.37.pdiff [1,180 B]
+Fetched 308 kB in 1s (343 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+=== 2026-02-03 20:14:38 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
@@ -86,175 +145,32 @@ Nothing to do.
 :: [1mChecking development packages...[0m
 :: [1mSearching databases for updates...[0m
  -> Flagged Out Of Date AUR Packages: neofetch
-:: 1 package to upgrade/install.
-1  aur/arch-update  3.17.8-1 -> 3.17.9-1
-==> Packages to exclude: (eg: "1 2 3", "1-3", "^4" or repo name)
- -> Excluding packages may cause partial upgrades and break systems
-==> 
-AUR Explicit (1): arch-update-3.17.9-1
-:: [1m(1/1) Downloaded PKGBUILD: arch-update[0m
-  1 arch-update                              (Installed) (Build Files Exist)
-==> Packages to cleanBuild?
-==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
-==> 
-  1 arch-update                              (Installed) (Build Files Exist)
-==> Diffs to show?
-==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
-==> 
-==> Making package: arch-update 3.17.9-1 (Mon 02 Feb 2026 06:51:32 PM PST)
-==> Retrieving sources...
-  -> Downloading arch-update-3.17.9.tar.gz...
-  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
-                                 Dload  Upload  Total   Spent   Left   Speed
-  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0
-  0      0   0      0   0      0      0      0                              0100 104.2k   0 104.2k   0      0 127.2k      0                              0100 104.2k   0 104.2k   0      0 127.2k      0                              0100 104.2k   0 104.2k   0      0 127.2k      0                              0
-==> WARNING: Skipping verification of source file PGP signatures.
-==> Validating source files with sha256sums...
-    arch-update-3.17.9.tar.gz ... Passed
-:: [1m(1/1) Parsing SRCINFO: arch-update[0m
-==> Making package: arch-update 3.17.9-1 (Mon 02 Feb 2026 06:51:33 PM PST)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> Retrieving sources...
-  -> Found arch-update-3.17.9.tar.gz
-==> Validating source files with sha256sums...
-    arch-update-3.17.9.tar.gz ... Passed
-==> Removing existing $srcdir/ directory...
-==> Extracting sources...
-  -> Extracting arch-update-3.17.9.tar.gz with bsdtar
-==> Starting prepare()...
-# Delete generated man pages
-rm -f "doc/man/arch-update.1"
-rm -f "doc/man/arch-update.conf.5"
-rm -f "doc/man/fr/arch-update.1"
-rm -f "doc/man/fr/arch-update.conf.5"
-# Delete generated translation files
-rm -f po/fr.mo
-rm -f po/sv.mo
-rm -f po/zh_CN.mo
-rm -f po/hu.mo
-rm -f po/de.mo
-rm -f po/pt_BR.mo
-rm -f po/es.mo
-rm -f po/zh_TW.mo
-rm -f po/ru.mo
-==> Sources are ready.
-==> Making package: arch-update 3.17.9-1 (Mon 02 Feb 2026 06:51:33 PM PST)
-==> Checking runtime dependencies...
-==> Checking buildtime dependencies...
-==> WARNING: Using existing $srcdir/ tree
-==> Starting build()...
-# Generate man pages
-scdoc < "doc/man/arch-update.1.scd" > "doc/man/arch-update.1"
-scdoc < "doc/man/arch-update.conf.5.scd" > "doc/man/arch-update.conf.5"
-scdoc < "doc/man/fr/arch-update.1.scd" > "doc/man/fr/arch-update.1"
-scdoc < "doc/man/fr/arch-update.conf.5.scd" > "doc/man/fr/arch-update.conf.5"
-# Generate translation files
-msgfmt po/fr.po -o po/fr.mo
-msgfmt po/sv.po -o po/sv.mo
-msgfmt po/zh_CN.po -o po/zh_CN.mo
-msgfmt po/hu.po -o po/hu.mo
-msgfmt po/de.po -o po/de.mo
-msgfmt po/pt_BR.po -o po/pt_BR.mo
-msgfmt po/es.po -o po/es.mo
-msgfmt po/zh_TW.po -o po/zh_TW.mo
-msgfmt po/ru.po -o po/ru.mo
-==> Starting check()...
-# Run some simple unit tests on basic functions
-bats test/case/basic_functions.bats
-1..2
-ok 1 version
-ok 2 help
-==> Entering fakeroot environment...
-==> Starting package()...
-# Install main script
-install -Dm 755 "src/arch-update.sh" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/bin/arch-update"
-# Install libraries
-install -Dm 755 src/lib/* -t "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/arch-update/lib/"
-# Install icons
-install -Dm 664 res/icons/"arch-update"*.svg -t "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/icons/hicolor/scalable/apps/"
-install -Dm 664 res/icons/"arch-update"_updates-available*.svg -t "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/icons/hicolor/scalable/apps/"
-# Install .desktop files
-install -Dm 644 "res/desktop/arch-update.desktop" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/applications/arch-update.desktop"
-install -Dm 644 "res/desktop/arch-update-tray.desktop" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/applications/arch-update-tray.desktop"
-# Install systemd units
-install -Dm 644 "res/systemd/arch-update.service" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/lib/systemd/user/arch-update.service"
-install -Dm 644 "res/systemd/arch-update.timer" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/lib/systemd/user/arch-update.timer"
-install -Dm 644 "res/systemd/arch-update-tray.service" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/lib/systemd/user/arch-update-tray.service"
-# Install shell completions
-install -Dm 644 "res/completions/arch-update.bash" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/bash-completion/completions/arch-update"
-install -Dm 644 "res/completions/arch-update.zsh" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/zsh/site-functions/_arch-update"
-install -Dm 644 "res/completions/arch-update.fish" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/fish/vendor_completions.d/arch-update.fish"
-# Install man pages
-install -Dm 644 "doc/man/arch-update.1" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/man/man1/arch-update.1"
-install -Dm 644 "doc/man/arch-update.conf.5" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/man/man5/arch-update.conf.5"
-install -Dm 644 "doc/man/fr/arch-update.1" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/man/fr/man1/arch-update.1"
-install -Dm 644 "doc/man/fr/arch-update.conf.5" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/man/fr/man5/arch-update.conf.5"
-# Install translation files
-# Translation files are installed as "Arch-Update.mo" to avoid conflicting with the "arch-update.mo" files shipped by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
-install -Dm 644 po/fr.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/fr/LC_MESSAGES/Arch-Update.mo"
-install -Dm 644 po/sv.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/sv/LC_MESSAGES/Arch-Update.mo"
-install -Dm 644 po/zh_CN.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/zh_CN/LC_MESSAGES/Arch-Update.mo"
-install -Dm 644 po/hu.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/hu/LC_MESSAGES/Arch-Update.mo"
-install -Dm 644 po/de.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/de/LC_MESSAGES/Arch-Update.mo"
-install -Dm 644 po/pt_BR.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/pt_BR/LC_MESSAGES/Arch-Update.mo"
-install -Dm 644 po/es.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/es/LC_MESSAGES/Arch-Update.mo"
-install -Dm 644 po/zh_TW.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/zh_TW/LC_MESSAGES/Arch-Update.mo"
-install -Dm 644 po/ru.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/ru/LC_MESSAGES/Arch-Update.mo"
-# Install documentation
-install -Dm 644 README.md "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/doc/arch-update/README.md"
-install -Dm 644 README-fr.md "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/doc/arch-update/fr/README.md"
-# Install example config
-install -Dm 644 "res/config/arch-update.conf.example" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/arch-update/config/arch-update.conf.example"
-==> Tidying install...
-  -> Removing libtool files...
-  -> Removing static library files...
-  -> Purging unwanted files...
-  -> Stripping unneeded symbols from binaries and libraries...
-  -> Compressing man and info pages...
-==> Checking for packaging issues...
-==> Creating package "arch-update"...
-  -> Generating .PKGINFO file...
-  -> Generating .BUILDINFO file...
-  -> Generating .MTREE file...
-  -> Compressing package...
-==> Leaving fakeroot environment.
-==> Finished making: arch-update 3.17.9-1 (Mon 02 Feb 2026 06:51:34 PM PST)
-==> Cleaning up...
-loading packages...
-resolving dependencies...
-looking for conflicting packages...
-
-Package (1)  Old Version  New Version  Net Change
-
-arch-update  3.17.8-1     3.17.9-1       0.00 MiB
-
-Total Installed Size:  0.28 MiB
-Net Upgrade Size:      0.00 MiB
-
-:: Proceed with installation? [Y/n] 
-checking keyring...
-checking package integrity...
-loading package files...
-checking for file conflicts...
-:: Running pre-transaction hooks...
-(1/1) Distrobox hook /etc/distrobox-pre-hook.sh...
-:: Processing package changes...
-upgrading arch-update...
-:: Running post-transaction hooks...
-(1/4) Reloading user manager configuration...
-(2/4) Arming ConditionNeedsUpdate...
-(3/4) Distrobox hook /etc/distrobox-post-hook.sh...
-(4/4) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
-=== 2026-02-02 18:51:34 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
+ there is nothing to do
+=== 2026-02-03 20:14:39 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
 Updating and loading repositories:
 Repositories loaded.
 Nothing to do.
-=== 2026-02-02 18:51:34 === /usr/bin/flatpak update -y
+=== 2026-02-03 20:14:40 === /usr/bin/flatpak update -y
 Looking for updates…
 
-Nothing to do.
-=== 2026-02-02 18:51:34 === chezmoi status
+
+ 1.	   	it.mijorus.gearlever.Locale	stable	u	flathub	< 84.7 kB (partial)
+ 2.	   	it.mijorus.gearlever	stable	u	flathub	< 9.5 MB
+ 3.	   	com.discordapp.Discord	stable	u	flathub	< 113.3 MB
+
+
+Updating 1/3…
+Updating 1/3…                        0%  0 bytes/s
+Updating 1/3… ████████████████████ 100%
+Updating 2/3…
+Updating 2/3…                        0%  0 bytes/s
+Updating 2/3… ████████████████████ 100%
+Updating 3/3…
+Updating 3/3…                        0%  0 bytes/s
+Updating 3/3… ████████████████████ 100%
+Updates complete.
+=== 2026-02-03 20:14:42 === chezmoi status
+MM .Brewfile
  A README.md
  A logs
  A logs/auto-update.log
