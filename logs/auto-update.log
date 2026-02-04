@@ -1,6 +1,6 @@
 
-=== 2026-02-03 20:14:10 === brew bundle dump --global --force
-=== 2026-02-03 20:14:12 === /usr/bin/distrobox upgrade -a
+=== 2026-02-04 13:41:46 === brew bundle dump --global --force
+=== 2026-02-04 13:41:48 === /usr/bin/distrobox upgrade -a
 [1;31m Upgrading arch...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -24,25 +24,17 @@ distrobox: Installing basic packages...
 resolving dependencies...
 looking for conflicting packages...
 
-Package (5)             Old Version  New Version  Net Change  Download Size
+Package (1)    Old Version  New Version  Net Change  Download Size
 
-core/archlinux-keyring  20260131-1   20260202-1     0.00 MiB       1.20 MiB
-extra/libpipewire       1:1.4.10-1   1:1.4.10-2     0.00 MiB       0.45 MiB
-extra/libpng            1.6.53-2     1.6.54-1       0.00 MiB       0.25 MiB
-extra/libwacom          2.17.0-1     2.18.0-1       0.01 MiB       0.18 MiB
-extra/pipewire          1:1.4.10-1   1:1.4.10-2     0.00 MiB       0.64 MiB
+extra/zlib-ng  2.3.2-1      2.3.3-1        0.00 MiB       0.11 MiB
 
-Total Download Size:   2.71 MiB
-Total Installed Size:  8.49 MiB
-Net Upgrade Size:      0.01 MiB
+Total Download Size:   0.11 MiB
+Total Installed Size:  0.28 MiB
+Net Upgrade Size:      0.00 MiB
 
 :: Proceed with installation? [Y/n] 
 :: Retrieving packages...
- archlinux-keyring-20260202-1-any downloading...
- pipewire-1:1.4.10-2-x86_64 downloading...
- libpipewire-1:1.4.10-2-x86_64 downloading...
- libpng-1.6.54-1-x86_64 downloading...
- libwacom-2.18.0-1-x86_64 downloading...
+ zlib-ng-2.3.3-1-x86_64 downloading...
 checking keyring...
 checking package integrity...
 loading package files...
@@ -50,23 +42,11 @@ checking for file conflicts...
 :: Running pre-transaction hooks...
 (1/1) Distrobox hook /etc/distrobox-pre-hook.sh...
 :: Processing package changes...
-upgrading archlinux-keyring...
-==> ERROR: There is no secret key available to sign with.
-==> Use 'pacman-key --init' to generate a default secret key.
-error: command failed to execute correctly
-upgrading libpipewire...
-upgrading libpng...
-upgrading libwacom...
-upgrading pipewire...
+upgrading zlib-ng...
 :: Running post-transaction hooks...
-(1/8) Updating udev hardware database...
-(2/8) Reloading system manager configuration...
-(3/8) Reloading user manager configuration...
-(4/8) Restarting marked services...
-(5/8) Reloading device manager configuration...
-(6/8) Arming ConditionNeedsUpdate...
-(7/8) Distrobox hook /etc/distrobox-post-hook.sh...
-(8/8) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
+(1/3) Arming ConditionNeedsUpdate...
+(2/3) Distrobox hook /etc/distrobox-post-hook.sh...
+(3/3) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
 [1;31m Upgrading fedora...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -85,27 +65,7 @@ distrobox: Installing basic packages...
 /usr/sbin/dnf
 Updating and loading repositories:
 Repositories loaded.
-Package                  Arch   Version               Repository           Size
-Upgrading:
- antigravity             x86_64 1.16.5-1770078955.el8 antigravity-rpm 739.9 MiB
-   replacing antigravity x86_64 1.15.8-1769230927.el8 antigravity-rpm 702.4 MiB
-
-Transaction Summary:
- Upgrading:          1 package
- Replacing:          1 package
-
-Total size of inbound packages is 180 MiB. Need to download 180 MiB.
-After this operation, 38 MiB extra will be used (install 740 MiB, remove 702 MiB).
-[1/1] antigravity-0:1.16.5-1770078955.e 100% |  26.9 MiB/s | 179.7 MiB |  00m07s
---------------------------------------------------------------------------------
-[1/1] Total                             100% |  26.9 MiB/s | 179.7 MiB |  00m07s
-Running transaction
-[1/4] Verify package files              100% |   3.0   B/s |   1.0   B |  00m00s
-[2/4] Prepare transaction               100% |  14.0   B/s |   2.0   B |  00m00s
-[3/4] Upgrading antigravity-0:1.16.5-17 100% | 107.8 MiB/s | 743.9 MiB |  00m07s
-[4/4] Removing antigravity-0:1.15.8-176 100% |  12.3 KiB/s |  16.0 KiB |  00m01s
-Warning: skipped OpenPGP checks for 1 package from repository: antigravity-rpm
-Complete!
+Nothing to do.
 [1;31m Upgrading debian...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -125,19 +85,15 @@ distrobox: Installing basic packages...
 Get:1 http://deb.debian.org/debian stable-backports InRelease [54.0 kB]
 Hit:2 http://deb.debian.org/debian stable InRelease
 Get:3 http://deb.debian.org/debian stable-updates InRelease [47.3 kB]
-Get:4 http://deb.debian.org/debian-security stable-security InRelease [43.4 kB]
-Get:5 http://deb.debian.org/debian stable-backports/main amd64 Packages.diff/Index [63.3 kB]
-Get:6 http://deb.debian.org/debian-security stable-security/main amd64 Packages [98.8 kB]
-Get:7 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-03-1959.51-F-2026-02-03-0759.37.pdiff [1,180 B]
-Get:7 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-03-1959.51-F-2026-02-03-0759.37.pdiff [1,180 B]
-Fetched 308 kB in 1s (343 kB/s)
+Hit:4 http://deb.debian.org/debian-security stable-security InRelease
+Fetched 101 kB in 0s (251 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-=== 2026-02-03 20:14:38 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
+=== 2026-02-04 13:41:54 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
@@ -146,22 +102,35 @@ Calculating upgrade...
 :: [1mSearching databases for updates...[0m
  -> Flagged Out Of Date AUR Packages: neofetch
  there is nothing to do
-=== 2026-02-03 20:14:39 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
+=== 2026-02-04 13:41:55 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
 Updating and loading repositories:
 Repositories loaded.
 Nothing to do.
-=== 2026-02-03 20:14:40 === /usr/bin/flatpak update -y
+=== 2026-02-04 13:41:55 === /usr/bin/flatpak update -y
 Looking for updates…
 
 
- 1.	   	it.mijorus.gearlever.Locale	stable	u	flathub	< 84.7 kB (partial)
- 2.	   	it.mijorus.gearlever	stable	u	flathub	< 9.5 MB
- 3.	   	com.discordapp.Discord	stable	u	flathub	< 113.3 MB
+ 1.	   	com.brave.Browser	stable	u	flathub	< 191.5 MB
+ 2.	   	org.kde.haruna.Locale	stable	u	flathub	< 534.4 kB
+ 3.	   	org.kde.haruna	stable	u	flathub	< 9.9 MB
 
 
 Updating 1/3…
 Updating 1/3…                        0%  0 bytes/s
-Updating 1/3… ████████████████████ 100%
+Updating 1/3… ██▏                   11%
+Updating 1/3… ███▍                  17%
+Updating 1/3… █████                 25%
+Updating 1/3… ██████▊               34%  35.3 MB/s
+Updating 1/3… ████████▏             41%  45.7 MB/s
+Updating 1/3… ██████████            50%  56.7 MB/s
+Updating 1/3… ███████████▍          57%  33.2 MB/s
+Updating 1/3… █████████████         65%  38.6 MB/s
+Updating 1/3… ██████████████▌       73%  43.9 MB/s
+Updating 1/3… ████████████████      80%  32.7 MB/s
+Updating 1/3… █████████████████▌    88%  36.4 MB/s
+Updating 1/3… ███████████████████▏  96%  39.9 MB/s
+Updating 1/3… ████████████████████ 100%  41.4 MB/s
+Updating 1/3… ████████████████████ 100%  31.0 MB/s  00:00
 Updating 2/3…
 Updating 2/3…                        0%  0 bytes/s
 Updating 2/3… ████████████████████ 100%
@@ -169,7 +138,7 @@ Updating 3/3…
 Updating 3/3…                        0%  0 bytes/s
 Updating 3/3… ████████████████████ 100%
 Updates complete.
-=== 2026-02-03 20:14:42 === chezmoi status
+=== 2026-02-04 13:42:02 === chezmoi status
 MM .Brewfile
  A README.md
  A logs
