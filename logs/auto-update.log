@@ -1,6 +1,6 @@
 
-=== 2026-02-05 00:06:10 === brew bundle dump --global --force
-=== 2026-02-05 00:06:12 === /usr/bin/distrobox upgrade -a
+=== 2026-02-06 00:02:16 === brew bundle dump --global --force
+=== 2026-02-06 00:02:17 === /usr/bin/distrobox upgrade -a
 [1;31m Upgrading arch...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -24,17 +24,33 @@ distrobox: Installing basic packages...
 resolving dependencies...
 looking for conflicting packages...
 
-Package (1)     Old Version  New Version  Net Change  Download Size
+Package (9)                     Old Version  New Version  Net Change  Download Size
 
-core/coreutils  9.9-1        9.10-1        -1.00 MiB       2.82 MiB
+core/iana-etc                   20251215-1   20260203-1     0.00 MiB       0.39 MiB
+extra/kaccounts-integration     25.12.1-1    25.12.2-1      0.00 MiB       0.14 MiB
+extra/kaccounts-providers       25.12.1-1    25.12.2-1      0.00 MiB       0.08 MiB
+core/less                       1:691-1      1:691-2        0.00 MiB       0.15 MiB
+core/libgcrypt                  1.11.2-1     1.12.0-1       0.06 MiB       0.72 MiB
+extra/libkgapi                  25.12.1-1    25.12.2-1      0.01 MiB       0.60 MiB
+extra/signon-kwallet-extension  25.12.1-1    25.12.2-1      0.00 MiB       0.01 MiB
+extra/vim                       9.1.2077-1   9.1.2132-1     0.04 MiB       2.37 MiB
+extra/vim-runtime               9.1.2077-1   9.1.2132-1     0.61 MiB       7.46 MiB
 
-Total Download Size:    2.82 MiB
-Total Installed Size:  26.33 MiB
-Net Upgrade Size:      -1.00 MiB
+Total Download Size:   11.93 MiB
+Total Installed Size:  53.26 MiB
+Net Upgrade Size:       0.72 MiB
 
 :: Proceed with installation? [Y/n] 
 :: Retrieving packages...
- coreutils-9.10-1-x86_64 downloading...
+ vim-runtime-9.1.2132-1-x86_64 downloading...
+ vim-9.1.2132-1-x86_64 downloading...
+ libgcrypt-1.12.0-1-x86_64 downloading...
+ libkgapi-25.12.2-1-x86_64 downloading...
+ iana-etc-20260203-1-any downloading...
+ less-1:691-2-x86_64 downloading...
+ kaccounts-integration-25.12.2-1-x86_64 downloading...
+ kaccounts-providers-25.12.2-1-x86_64 downloading...
+ signon-kwallet-extension-25.12.2-1-x86_64 downloading...
 checking keyring...
 checking package integrity...
 loading package files...
@@ -42,7 +58,15 @@ checking for file conflicts...
 :: Running pre-transaction hooks...
 (1/1) Distrobox hook /etc/distrobox-pre-hook.sh...
 :: Processing package changes...
-upgrading coreutils...
+upgrading iana-etc...
+upgrading libgcrypt...
+upgrading signon-kwallet-extension...
+upgrading kaccounts-integration...
+upgrading kaccounts-providers...
+upgrading less...
+upgrading libkgapi...
+upgrading vim-runtime...
+upgrading vim...
 :: Running post-transaction hooks...
 (1/4) Arming ConditionNeedsUpdate...
 (2/4) Distrobox hook /etc/distrobox-post-hook.sh...
@@ -53,8 +77,65 @@ upgrading coreutils...
 /usr/sbin/dnf
 /usr/sbin/dnf
 Updating and loading repositories:
+ Antigravity RPM Repository             100% |   2.2 KiB/s |   1.4 KiB |  00m01s
+ google-chrome                          100% |   2.1 KiB/s |   1.3 KiB |  00m01s
+ Fedora 42 - x86_64 - Updates           100% |   8.7 KiB/s |  10.0 KiB |  00m01s
 Repositories loaded.
-Nothing to do.
+Package                  Arch   Version           Repository                            Size
+Upgrading:
+ cpp                     x86_64 15.2.1-7.fc42     updates                           38.0 MiB
+   replacing cpp         x86_64 15.2.1-5.fc42     updates                           37.9 MiB
+ gcc                     x86_64 15.2.1-7.fc42     updates                          111.4 MiB
+   replacing gcc         x86_64 15.2.1-5.fc42     updates                          111.3 MiB
+ libgcc                  i686   15.2.1-7.fc42     updates                          297.6 KiB
+   replacing libgcc      i686   15.2.1-5.fc42     updates                          297.6 KiB
+ libgcc                  x86_64 15.2.1-7.fc42     updates                          266.6 KiB
+   replacing libgcc      x86_64 15.2.1-5.fc42     a0178fed87de4084b1f6e05bdf00b044 266.6 KiB
+ libgomp                 x86_64 15.2.1-7.fc42     updates                          541.5 KiB
+   replacing libgomp     x86_64 15.2.1-5.fc42     a0178fed87de4084b1f6e05bdf00b044 541.5 KiB
+ libstdc++               x86_64 15.2.1-7.fc42     updates                            2.8 MiB
+   replacing libstdc++   x86_64 15.2.1-5.fc42     a0178fed87de4084b1f6e05bdf00b044   2.8 MiB
+ vim-data                noarch 2:9.1.2114-1.fc42 updates                           10.2 KiB
+   replacing vim-data    noarch 2:9.1.2086-1.fc42 updates                           10.2 KiB
+ vim-minimal             x86_64 2:9.1.2114-1.fc42 updates                            1.7 MiB
+   replacing vim-minimal x86_64 2:9.1.2086-1.fc42 updates                            1.7 MiB
+
+Transaction Summary:
+ Upgrading:          8 packages
+ Replacing:          8 packages
+
+Total size of inbound packages is 55 MiB. Need to download 55 MiB.
+After this operation, 69 KiB extra will be used (install 155 MiB, remove 155 MiB).
+[1/8] libgomp-0:15.2.1-7.fc42.x86_64    100% | 572.6 KiB/s | 376.8 KiB |  00m01s
+[2/8] libgcc-0:15.2.1-7.fc42.x86_64     100% | 141.1 KiB/s | 136.5 KiB |  00m01s
+[3/8] cpp-0:15.2.1-7.fc42.x86_64        100% |   5.5 MiB/s |  12.9 MiB |  00m02s
+[4/8] libgcc-0:15.2.1-7.fc42.i686       100% | 209.6 KiB/s | 154.3 KiB |  00m01s
+[5/8] vim-data-2:9.1.2114-1.fc42.noarch 100% | 219.5 KiB/s |  17.3 KiB |  00m00s
+[6/8] libstdc++-0:15.2.1-7.fc42.x86_64  100% |   3.6 MiB/s | 923.0 KiB |  00m00s
+[7/8] vim-minimal-2:9.1.2114-1.fc42.x86 100% |   2.5 MiB/s | 852.2 KiB |  00m00s
+[8/8] gcc-0:15.2.1-7.fc42.x86_64        100% |  10.4 MiB/s |  39.6 MiB |  00m04s
+--------------------------------------------------------------------------------
+[8/8] Total                             100% |  14.5 MiB/s |  54.9 MiB |  00m04s
+Running transaction
+[ 1/18] Verify package files            100% |  74.0   B/s |   8.0   B |  00m00s
+[ 2/18] Prepare transaction             100% | 301.0   B/s |  16.0   B |  00m00s
+[ 3/18] Upgrading libgcc-0:15.2.1-7.fc4 100% |  87.3 MiB/s | 268.3 KiB |  00m00s
+[ 4/18] Upgrading vim-data-2:9.1.2114-1 100% |  11.0 MiB/s |  11.3 KiB |  00m00s
+[ 5/18] Upgrading libgomp-0:15.2.1-7.fc 100% | 265.0 MiB/s | 542.8 KiB |  00m00s
+[ 6/18] Upgrading cpp-0:15.2.1-7.fc42.x 100% | 486.7 MiB/s |  38.0 MiB |  00m00s
+[ 7/18] Upgrading gcc-0:15.2.1-7.fc42.x 100% | 659.4 MiB/s | 111.4 MiB |  00m00s
+[ 8/18] Upgrading vim-minimal-2:9.1.211 100% | 101.6 MiB/s |   1.7 MiB |  00m00s
+[ 9/18] Upgrading libstdc++-0:15.2.1-7. 100% | 218.2 MiB/s |   2.8 MiB |  00m00s
+[10/18] Upgrading libgcc-0:15.2.1-7.fc4 100% | 146.2 MiB/s | 299.3 KiB |  00m00s
+[11/18] Removing libstdc++-0:15.2.1-5.f 100% |   5.0 KiB/s |  31.0   B |  00m00s
+[12/18] Removing gcc-0:15.2.1-5.fc42.x8 100% |  47.9 KiB/s | 343.0   B |  00m00s
+[13/18] Removing libgcc-0:15.2.1-5.fc42 100% |   2.1 KiB/s |  11.0   B |  00m00s
+[14/18] Removing vim-minimal-2:9.1.2086 100% |   3.1 KiB/s |  16.0   B |  00m00s
+[15/18] Removing vim-data-2:9.1.2086-1. 100% |   1.7 KiB/s |   7.0   B |  00m00s
+[16/18] Removing cpp-0:15.2.1-5.fc42.x8 100% |   7.2 KiB/s |  37.0   B |  00m00s
+[17/18] Removing libgcc-0:15.2.1-5.fc42 100% |  10.7 KiB/s |  11.0   B |  00m00s
+[18/18] Removing libgomp-0:15.2.1-5.fc4 100% |  55.0   B/s |   8.0   B |  00m00s
+Complete!
 [1;31m Upgrading debian...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -75,14 +156,18 @@ Get:1 http://deb.debian.org/debian stable-backports InRelease [54.0 kB]
 Hit:2 http://deb.debian.org/debian stable InRelease
 Get:3 http://deb.debian.org/debian stable-updates InRelease [47.3 kB]
 Get:4 http://deb.debian.org/debian-security stable-security InRelease [43.4 kB]
-Fetched 145 kB in 0s (365 kB/s)
+Get:5 http://deb.debian.org/debian stable-backports/main amd64 Packages.diff/Index [63.3 kB]
+Get:6 http://deb.debian.org/debian-security stable-security/main amd64 Packages [100 kB]
+Get:7 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-06-0202.03-F-2026-02-05-0759.51.pdiff [1,051 B]
+Get:7 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-06-0202.03-F-2026-02-05-0759.51.pdiff [1,051 B]
+Fetched 309 kB in 0s (648 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-=== 2026-02-05 00:06:16 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
+=== 2026-02-06 00:02:32 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
@@ -91,15 +176,46 @@ Calculating upgrade...
 :: [1mSearching databases for updates...[0m
  -> Flagged Out Of Date AUR Packages: neofetch
  there is nothing to do
-=== 2026-02-05 00:06:17 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
+=== 2026-02-06 00:02:33 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
 Updating and loading repositories:
 Repositories loaded.
 Nothing to do.
-=== 2026-02-05 00:06:18 === /usr/bin/flatpak update -y
+=== 2026-02-06 00:02:33 === /usr/bin/flatpak update -y
 Looking for updates…
 
-Nothing to do.
-=== 2026-02-05 00:06:18 === chezmoi status
+
+ 1.	   	org.kde.filelight.Locale	stable	u	flathub	< 166.3 kB
+ 2.	   	org.kde.filelight	stable	u	flathub	< 450.9 kB
+ 3.	   	org.kde.gwenview.Locale	stable	u	flathub	< 5.5 MB
+ 4.	   	org.kde.gwenview	stable	u	flathub	< 7.7 MB
+ 5.	   	org.kde.kcalc.Locale	stable	u	flathub	< 556.9 kB
+ 6.	   	org.kde.kcalc	stable	u	flathub	< 1.4 MB
+
+
+Updating 1/6…
+Updating 1/6…                        0%  0 bytes/s
+Updating 1/6… ▌                      3%
+Updating 1/6… ████████████████████ 100%
+Updating 2/6…
+Updating 2/6…                        0%  0 bytes/s
+Updating 2/6… ████████████████████ 100%
+Updating 3/6…
+Updating 3/6…                        0%  0 bytes/s
+Updating 3/6… █                      5%
+Updating 3/6… ████████████████████ 100%
+Updating 4/6…
+Updating 4/6…                        0%  0 bytes/s
+Updating 4/6… ████████████████████ 100%
+Updating 5/6…
+Updating 5/6…                        0%  0 bytes/s
+Updating 5/6… ▊                      4%
+Updating 5/6… ████████████████████ 100%
+Updating 6/6…
+Updating 6/6…                        0%  0 bytes/s
+Updating 6/6… ████████████████████ 100%
+Updates complete.
+=== 2026-02-06 00:02:37 === chezmoi status
+MM .Brewfile
  A README.md
  A logs
  A logs/auto-update.log
