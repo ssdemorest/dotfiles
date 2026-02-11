@@ -4,11 +4,6 @@ alias arch-run='distrobox enter Arch --no-tty --'
 alias grep=rg
 alias kubectl="minikube kubectl --"
 alias vi=vim
-export L4T_RELEASE_PACKAGE="Jetson_Linux_R36.5.0_aarch64.tbz2"
-export SAMPLE_FS_PACKAGE="Tegra_Linux_Sample-Root-Filesystem_R36.5.0_aarch64.tbz2"
-export BOARD="jetson-orin-nano-devkit-super"
-# Hello World!
-
 
 # filen-cli
 PATH=$PATH:~/.filen-cli/bin
