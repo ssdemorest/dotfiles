@@ -1,6 +1,6 @@
 
-=== 2026-02-12 15:03:46 === brew bundle dump --global --force
-=== 2026-02-12 15:03:48 === /usr/bin/distrobox upgrade -a
+=== 2026-02-13 00:19:18 === brew bundle dump --global --force
+=== 2026-02-13 00:19:20 === /usr/bin/distrobox upgrade -a
 [1;31m Upgrading arch...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -21,39 +21,7 @@ distrobox: Installing basic packages...
  core downloading...
  extra downloading...
 :: Starting full system upgrade...
-resolving dependencies...
-looking for conflicting packages...
-
-Package (3)   Old Version  New Version    Net Change  Download Size
-
-extra/lame    3.100-6      3.101.r6531-1   -0.10 MiB       0.30 MiB
-extra/libssh  0.11.3-1     0.12.0-1         0.07 MiB       0.24 MiB
-core/m4       1.4.20-1     1.4.21-1         0.01 MiB       0.27 MiB
-
-Total Download Size:    0.80 MiB
-Total Installed Size:   2.52 MiB
-Net Upgrade Size:      -0.02 MiB
-
-:: Proceed with installation? [Y/n] 
-:: Retrieving packages...
- lame-3.101.r6531-1-x86_64 downloading...
- m4-1.4.21-1-x86_64 downloading...
- libssh-0.12.0-1-x86_64 downloading...
-checking keyring...
-checking package integrity...
-loading package files...
-checking for file conflicts...
-:: Running pre-transaction hooks...
-(1/1) Distrobox hook /etc/distrobox-pre-hook.sh...
-:: Processing package changes...
-upgrading lame...
-upgrading libssh...
-upgrading m4...
-:: Running post-transaction hooks...
-(1/4) Arming ConditionNeedsUpdate...
-(2/4) Distrobox hook /etc/distrobox-post-hook.sh...
-(3/4) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
-(4/4) Updating the info directory file...
+ there is nothing to do
 [1;31m Upgrading fedora...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -71,9 +39,65 @@ distrobox: Installing basic packages...
 /usr/sbin/dnf
 /usr/sbin/dnf
 Updating and loading repositories:
- Fedora 42 - x86_64 - Updates           100% |  52.0 KiB/s |  25.8 KiB |  00m00s
+ Antigravity RPM Repository             100% |   3.0 KiB/s |   1.4 KiB |  00m00s
+ google-chrome                          100% |   2.9 KiB/s |   1.3 KiB |  00m00s
+ Fedora 42 - x86_64 - Updates           100% |  35.5 KiB/s |  25.4 KiB |  00m01s
 Repositories loaded.
-Nothing to do.
+Package                           Arch   Version         Repository                            Size
+Upgrading:
+ google-chrome-stable             x86_64 145.0.7632.67-1 google-chrome                    386.9 MiB
+   replacing google-chrome-stable x86_64 145.0.7632.45-1 google-chrome                    386.9 MiB
+ libblkid                         x86_64 2.40.4-10.fc42  updates                          262.4 KiB
+   replacing libblkid             x86_64 2.40.4-8.fc42   a0178fed87de4084b1f6e05bdf00b044 262.4 KiB
+ libfdisk                         x86_64 2.40.4-10.fc42  updates                          372.3 KiB
+   replacing libfdisk             x86_64 2.40.4-8.fc42   updates                          372.3 KiB
+ libmount                         x86_64 2.40.4-10.fc42  updates                          356.3 KiB
+   replacing libmount             x86_64 2.40.4-8.fc42   a0178fed87de4084b1f6e05bdf00b044 356.3 KiB
+ libsmartcols                     x86_64 2.40.4-10.fc42  updates                          176.4 KiB
+   replacing libsmartcols         x86_64 2.40.4-8.fc42   a0178fed87de4084b1f6e05bdf00b044 176.4 KiB
+ libuuid                          x86_64 2.40.4-10.fc42  updates                           37.3 KiB
+   replacing libuuid              x86_64 2.40.4-8.fc42   a0178fed87de4084b1f6e05bdf00b044  37.3 KiB
+ util-linux                       x86_64 2.40.4-10.fc42  updates                            3.4 MiB
+   replacing util-linux           x86_64 2.40.4-8.fc42   updates                            3.4 MiB
+ util-linux-core                  x86_64 2.40.4-10.fc42  updates                            1.4 MiB
+   replacing util-linux-core      x86_64 2.40.4-8.fc42   a0178fed87de4084b1f6e05bdf00b044   1.4 MiB
+
+Transaction Summary:
+ Upgrading:          8 packages
+ Replacing:          8 packages
+
+Total size of inbound packages is 121 MiB. Need to download 121 MiB.
+After this operation, 16 KiB extra will be used (install 393 MiB, remove 393 MiB).
+[1/8] libuuid-0:2.40.4-10.fc42.x86_64   100% | 112.1 KiB/s |  25.7 KiB |  00m00s
+[2/8] libblkid-0:2.40.4-10.fc42.x86_64  100% | 370.6 KiB/s | 122.3 KiB |  00m00s
+[3/8] libmount-0:2.40.4-10.fc42.x86_64  100% | 828.4 KiB/s | 154.1 KiB |  00m00s
+[4/8] util-linux-core-0:2.40.4-10.fc42. 100% |   2.1 MiB/s | 528.6 KiB |  00m00s
+[5/8] libsmartcols-0:2.40.4-10.fc42.x86 100% |   1.1 MiB/s |  81.3 KiB |  00m00s
+[6/8] libfdisk-0:2.40.4-10.fc42.x86_64  100% |   1.6 MiB/s | 158.2 KiB |  00m00s
+[7/8] util-linux-0:2.40.4-10.fc42.x86_6 100% |   2.8 MiB/s |   1.2 MiB |  00m00s
+[8/8] google-chrome-stable-0:145.0.7632 100% |  27.4 MiB/s | 119.0 MiB |  00m04s
+--------------------------------------------------------------------------------
+[8/8] Total                             100% |  27.9 MiB/s | 121.2 MiB |  00m04s
+Running transaction
+[ 1/18] Verify package files            100% |  36.0   B/s |   8.0   B |  00m00s
+[ 2/18] Prepare transaction             100% | 380.0   B/s |  16.0   B |  00m00s
+[ 3/18] Upgrading libuuid-0:2.40.4-10.f 100% |  12.5 MiB/s |  38.3 KiB |  00m00s
+[ 4/18] Upgrading libblkid-0:2.40.4-10. 100% | 128.7 MiB/s | 263.5 KiB |  00m00s
+[ 5/18] Upgrading libmount-0:2.40.4-10. 100% | 116.3 MiB/s | 357.3 KiB |  00m00s
+[ 6/18] Upgrading libsmartcols-0:2.40.4 100% |  86.6 MiB/s | 177.4 KiB |  00m00s
+[ 7/18] Upgrading util-linux-core-0:2.4 100% |  79.2 MiB/s |   1.4 MiB |  00m00s
+[ 8/18] Upgrading libfdisk-0:2.40.4-10. 100% | 121.6 MiB/s | 373.4 KiB |  00m00s
+[ 9/18] Upgrading util-linux-0:2.40.4-1 100% |  99.0 MiB/s |   3.5 MiB |  00m00s
+[10/18] Upgrading google-chrome-stable- 100% | 114.8 MiB/s | 386.9 MiB |  00m03s
+[11/18] Removing google-chrome-stable-0 100% |  19.1 KiB/s | 274.0   B |  00m00s
+[12/18] Removing util-linux-0:2.40.4-8. 100% |  26.4 KiB/s | 459.0   B |  00m00s
+[13/18] Removing util-linux-core-0:2.40 100% |  21.2 KiB/s | 152.0   B |  00m00s
+[14/18] Removing libfdisk-0:2.40.4-8.fc 100% |   6.8 KiB/s |   7.0   B |  00m00s
+[15/18] Removing libmount-0:2.40.4-8.fc 100% |   5.9 KiB/s |   6.0   B |  00m00s
+[16/18] Removing libblkid-0:2.40.4-8.fc 100% |   6.8 KiB/s |   7.0   B |  00m00s
+[17/18] Removing libuuid-0:2.40.4-8.fc4 100% |   5.9 KiB/s |   6.0   B |  00m00s
+[18/18] Removing libsmartcols-0:2.40.4- 100% |  18.0   B/s |   7.0   B |  00m00s
+Complete!
 [1;31m Upgrading debian...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -93,19 +117,21 @@ distrobox: Installing basic packages...
 Get:1 http://deb.debian.org/debian stable-backports InRelease [54.0 kB]
 Hit:2 http://deb.debian.org/debian stable InRelease
 Get:3 http://deb.debian.org/debian stable-updates InRelease [47.3 kB]
-Get:4 http://deb.debian.org/debian-security stable-security InRelease [43.4 kB]
-Get:5 http://deb.debian.org/debian stable-backports/main amd64 Packages.diff/Index [63.3 kB]
-Get:6 http://deb.debian.org/debian-security stable-security/main amd64 Packages [108 kB]
-Get:7 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-12-0800.53-F-2026-02-12-0800.53.pdiff [5,567 B]
-Get:7 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-12-0800.53-F-2026-02-12-0800.53.pdiff [5,567 B]
-Fetched 321 kB in 1s (358 kB/s)
+Hit:4 https://repo.radeon.com/amdgpu/30.30/ubuntu noble InRelease
+Hit:5 http://deb.debian.org/debian-security stable-security InRelease
+Hit:6 https://repo.radeon.com/rocm/apt/7.2 noble InRelease
+Get:7 http://deb.debian.org/debian stable-backports/main amd64 Packages.diff/Index [63.3 kB]
+Hit:8 https://repo.radeon.com/graphics/7.2/ubuntu noble InRelease
+Get:9 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-13-0204.10-F-2026-02-13-0204.10.pdiff [190 B]
+Get:9 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-13-0204.10-F-2026-02-13-0204.10.pdiff [190 B]
+Fetched 165 kB in 0s (341 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-=== 2026-02-12 15:03:54 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
+=== 2026-02-13 00:19:36 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
@@ -113,15 +139,17 @@ Calculating upgrade...
 :: [1mChecking development packages...[0m
 :: [1mSearching databases for updates...[0m
  there is nothing to do
-=== 2026-02-12 15:03:55 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
+=== 2026-02-13 00:19:37 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
 Updating and loading repositories:
+ google-chrome                          100% |   5.0 KiB/s |   1.3 KiB |  00m00s
 Repositories loaded.
 Nothing to do.
-=== 2026-02-12 15:03:56 === /usr/bin/flatpak update -y
+=== 2026-02-13 00:19:37 === /usr/bin/flatpak update -y
 Looking for updates…
 
 Nothing to do.
-=== 2026-02-12 15:03:56 === chezmoi status
+=== 2026-02-13 00:19:37 === chezmoi status
+MM .Brewfile
  A README.md
  A logs
  A logs/auto-update.log
