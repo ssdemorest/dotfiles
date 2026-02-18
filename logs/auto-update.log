@@ -1,6 +1,6 @@
 
-=== 2026-02-17 12:17:57 === brew bundle dump --global --force
-=== 2026-02-17 12:18:06 === /usr/bin/distrobox upgrade -a
+=== 2026-02-18 00:24:36 === brew bundle dump --global --force
+=== 2026-02-18 00:24:39 === /usr/bin/distrobox upgrade -a
 [1;31m Upgrading arch...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -21,142 +21,55 @@ distrobox: Installing basic packages...
  core downloading...
  extra downloading...
 :: Starting full system upgrade...
-resolving dependencies...
-looking for conflicting packages...
-
-Package (21)            Old Version  New Version  Net Change  Download Size
-
-core/dbus-broker        37-2         37-3           0.00 MiB       0.14 MiB
-core/dbus-broker-units  37-2         37-3           0.00 MiB       0.00 MiB
-core/dbus-units         37-2         37-3           0.00 MiB       0.00 MiB
-extra/ffmpeg            2:8.0.1-6    2:8.0.1-7      0.00 MiB      14.08 MiB
-core/gettext            1.0-1        1.0-2          0.00 MiB       3.20 MiB
-core/glib2              2.86.3-2     2.86.4-1       0.12 MiB       4.95 MiB
-core/groff              1.23.0-7     1.23.0-8       0.02 MiB       2.26 MiB
-extra/gtest             1.17.0-1     1.17.0-2       0.00 MiB       0.38 MiB
-extra/htmlq             0.4.0-2      0.4.0-3        0.02 MiB       0.72 MiB
-extra/libnvme           1.16.1-2     1.16.1-3       0.00 MiB       0.30 MiB
-extra/libplist          2.7.0-2      2.7.0-3        0.00 MiB       0.16 MiB
-extra/libsoup3          3.6.5-1      3.6.6-1        0.02 MiB       0.39 MiB
-extra/libusbmuxd        2.1.1-1      2.1.1-2        0.00 MiB       0.03 MiB
-core/ncurses            6.5-4        6.6-1          0.10 MiB       1.17 MiB
-core/python             3.14.2-2     3.14.3-1       0.14 MiB      13.02 MiB
-extra/rclone            1.73.0-1     1.73.1-1       0.03 MiB      26.91 MiB
-extra/sdl3              3.4.0-3      3.4.0-4        0.00 MiB       1.61 MiB
-extra/snappy            1.2.2-2      1.2.2-3        0.00 MiB       0.03 MiB
-extra/vim               9.1.2132-1   9.2.0010-1    -0.01 MiB       2.37 MiB
-extra/vim-runtime       9.1.2132-1   9.2.0010-1     0.09 MiB       7.47 MiB
-core/zstd               1.5.7-2      1.5.7-3        0.01 MiB       0.50 MiB
-
-Total Download Size:    79.68 MiB
-Total Installed Size:  350.87 MiB
-Net Upgrade Size:        0.54 MiB
-
-:: Proceed with installation? [Y/n] 
-:: Retrieving packages...
- rclone-1.73.1-1-x86_64 downloading...
- ffmpeg-2:8.0.1-7-x86_64 downloading...
- python-3.14.3-1-x86_64 downloading...
- vim-runtime-9.2.0010-1-x86_64 downloading...
- glib2-2.86.4-1-x86_64 downloading...
- gettext-1.0-2-x86_64 downloading...
- vim-9.2.0010-1-x86_64 downloading...
- groff-1.23.0-8-x86_64 downloading...
- sdl3-3.4.0-4-x86_64 downloading...
- ncurses-6.6-1-x86_64 downloading...
- htmlq-0.4.0-3-x86_64 downloading...
- zstd-1.5.7-3-x86_64 downloading...
- libsoup3-3.6.6-1-x86_64 downloading...
- gtest-1.17.0-2-x86_64 downloading...
- libnvme-1.16.1-3-x86_64 downloading...
- libplist-2.7.0-3-x86_64 downloading...
- dbus-broker-37-3-x86_64 downloading...
- snappy-1.2.2-3-x86_64 downloading...
- libusbmuxd-2.1.1-2-x86_64 downloading...
- dbus-broker-units-37-3-x86_64 downloading...
- dbus-units-37-3-x86_64 downloading...
-checking keyring...
-checking package integrity...
-loading package files...
-checking for file conflicts...
-:: Running pre-transaction hooks...
-(1/1) Distrobox hook /etc/distrobox-pre-hook.sh...
-:: Processing package changes...
-upgrading ncurses...
-upgrading zstd...
-upgrading dbus-broker...
-upgrading dbus-broker-units...
-upgrading dbus-units...
-upgrading glib2...
-upgrading snappy...
-upgrading gtest...
-upgrading sdl3...
-New optional dependencies for sdl3
-    alsa-lib: ALSA audio driver [installed]
-    jack: JACK audio driver [installed]
-    libdecor: Wayland client decorations [installed]
-    libpulse: PulseAudio audio driver [installed]
-    pipewire: PipeWire audio driver [installed]
-    sndio: sndio audio driver [installed]
-upgrading python...
-upgrading ffmpeg...
-upgrading gettext...
-upgrading groff...
-upgrading htmlq...
-upgrading libnvme...
-upgrading libplist...
-upgrading libsoup3...
-upgrading libusbmuxd...
-upgrading rclone...
-upgrading vim-runtime...
-upgrading vim...
-:: Running post-transaction hooks...
-( 1/10) Updating journal message catalog...
-( 2/10) Reloading system manager configuration...
-( 3/10) Reloading user manager configuration...
-( 4/10) Restarting marked services...
-( 5/10) Arming ConditionNeedsUpdate...
-( 6/10) Distrobox hook /etc/distrobox-post-hook.sh...
-( 7/10) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
-( 8/10) Updating icon theme caches...
-( 9/10) Updating the info directory file...
-(10/10) Updating the desktop file MIME type cache...
+ there is nothing to do
 [1;31m Upgrading fedora...
 [0mdistrobox: Installing basic packages...
 /usr/sbin/dnf
 /usr/sbin/dnf
 Updating and loading repositories:
- Fedora 42 - x86_64 - Updates           100% |  87.4 KiB/s |  23.9 KiB |  00m00s
+ Antigravity RPM Repository             100% |   5.6 KiB/s |   1.4 KiB |  00m00s
+ google-chrome                          100% |   5.3 KiB/s |   1.3 KiB |  00m00s
+ Fedora 42 - x86_64 - Updates           100% |   8.0 KiB/s |   6.4 KiB |  00m01s
 Repositories loaded.
-Package                   Arch   Version      Repository                            Size
+Package                    Arch   Version         Repository                            Size
 Upgrading:
- audit-libs               x86_64 4.1.3-1.fc42 updates                          378.8 KiB
-   replacing audit-libs   x86_64 4.1.2-2.fc42 a0178fed87de4084b1f6e05bdf00b044 378.8 KiB
- gnupg2                   x86_64 2.4.9-2.fc42 updates                            9.8 MiB
-   replacing gnupg2       x86_64 2.4.9-1.fc42 updates                            9.8 MiB
- gnupg2-smime             x86_64 2.4.9-2.fc42 updates                          582.0 KiB
-   replacing gnupg2-smime x86_64 2.4.9-1.fc42 updates                          582.0 KiB
+ libcap-ng                 x86_64 0.9-7.fc42      updates                           64.9 KiB
+   replacing libcap-ng     x86_64 0.8.5-4.fc42    221deee217b747518c448333e67472a0  72.9 KiB
+ libpng                    x86_64 2:1.6.55-1.fc42 updates                          241.7 KiB
+   replacing libpng        x86_64 2:1.6.53-1.fc42 updates                          241.7 KiB
+ libssh                    x86_64 0.11.4-1.fc42   updates                          571.8 KiB
+   replacing libssh        x86_64 0.11.3-1.fc42   a0178fed87de4084b1f6e05bdf00b044 567.1 KiB
+ libssh-config             noarch 0.11.4-1.fc42   updates                          277.0   B
+   replacing libssh-config noarch 0.11.3-1.fc42   a0178fed87de4084b1f6e05bdf00b044 277.0   B
+ osinfo-db                 noarch 20251212-1.fc42 updates                            4.2 MiB
+   replacing osinfo-db     noarch 20250124-1.fc42 fedora                             3.9 MiB
 
 Transaction Summary:
- Upgrading:          3 packages
- Replacing:          3 packages
+ Upgrading:          5 packages
+ Replacing:          5 packages
 
-Total size of inbound packages is 3 MiB. Need to download 3 MiB.
-After this operation, 30 B will be freed (install 11 MiB, remove 11 MiB).
-[1/3] audit-libs-0:4.1.3-1.fc42.x86_64  100% | 422.8 KiB/s | 138.3 KiB |  00m00s
-[2/3] gnupg2-smime-0:2.4.9-2.fc42.x86_6 100% | 658.9 KiB/s | 262.2 KiB |  00m00s
-[3/3] gnupg2-0:2.4.9-2.fc42.x86_64      100% |   2.8 MiB/s |   2.8 MiB |  00m01s
+Total size of inbound packages is 889 KiB. Need to download 889 KiB.
+After this operation, 304 KiB extra will be used (install 5 MiB, remove 5 MiB).
+[1/5] libcap-ng-0:0.9-7.fc42.x86_64     100% | 156.7 KiB/s |  32.3 KiB |  00m00s
+[2/5] libssh-config-0:0.11.4-1.fc42.noa 100% | 132.9 KiB/s |   9.2 KiB |  00m00s
+[3/5] libpng-2:1.6.55-1.fc42.x86_64     100% | 346.4 KiB/s | 124.0 KiB |  00m00s
+[4/5] libssh-0:0.11.4-1.fc42.x86_64     100% | 536.2 KiB/s | 233.3 KiB |  00m00s
+[5/5] osinfo-db-0:20251212-1.fc42.noarc 100% |   1.3 MiB/s | 490.8 KiB |  00m00s
 --------------------------------------------------------------------------------
-[3/3] Total                             100% |   3.1 MiB/s |   3.2 MiB |  00m01s
+[5/5] Total                             100% |   1.3 MiB/s | 889.5 KiB |  00m01s
 Running transaction
-[1/8] Verify package files              100% | 500.0   B/s |   3.0   B |  00m00s
-[2/8] Prepare transaction               100% | 150.0   B/s |   6.0   B |  00m00s
-[3/8] Upgrading gnupg2-0:2.4.9-2.fc42.x 100% | 352.2 MiB/s |   9.9 MiB |  00m00s
-[4/8] Upgrading gnupg2-smime-0:2.4.9-2. 100% |  71.2 MiB/s | 583.3 KiB |  00m00s
-[5/8] Upgrading audit-libs-0:4.1.3-1.fc 100% |  53.2 MiB/s | 381.2 KiB |  00m00s
-[6/8] Removing gnupg2-smime-0:2.4.9-1.f 100% |   1.0 KiB/s |   8.0   B |  00m00s
-[7/8] Removing gnupg2-0:2.4.9-1.fc42.x8 100% |  33.5 KiB/s | 206.0   B |  00m00s
-[8/8] Removing audit-libs-0:4.1.2-2.fc4 100% |  55.0   B/s |  18.0   B |  00m00s
+[ 1/12] Verify package files            100% |   2.4 KiB/s |   5.0   B |  00m00s
+[ 2/12] Prepare transaction             100% | 232.0   B/s |  10.0   B |  00m00s
+[ 3/12] Upgrading libssh-config-0:0.11. 100% | 132.8 KiB/s | 816.0   B |  00m00s
+[ 4/12] Upgrading libssh-0:0.11.4-1.fc4 100% |  80.1 MiB/s | 573.9 KiB |  00m00s
+[ 5/12] Upgrading osinfo-db-0:20251212- 100% |  80.0 MiB/s |   4.4 MiB |  00m00s
+[ 6/12] Upgrading libpng-2:1.6.55-1.fc4 100% |  79.1 MiB/s | 243.0 KiB |  00m00s
+[ 7/12] Upgrading libcap-ng-0:0.9-7.fc4 100% |  21.7 MiB/s |  66.8 KiB |  00m00s
+[ 8/12] Removing libssh-0:0.11.3-1.fc42 100% |   6.8 KiB/s |  14.0   B |  00m00s
+[ 9/12] Removing libssh-config-0:0.11.3 100% |   1.5 KiB/s |   3.0   B |  00m00s
+[10/12] Removing osinfo-db-0:20250124-1 100% | 386.7 KiB/s |   1.2 KiB |  00m00s
+[11/12] Removing libpng-2:1.6.53-1.fc42 100% |   3.9 KiB/s |   8.0   B |  00m00s
+[12/12] Removing libcap-ng-0:0.8.5-4.fc 100% |  74.0   B/s |  12.0   B |  00m00s
 Complete!
 [1;31m Upgrading debian...
 [0mStarting container...                   	[32m [ OK ]
@@ -175,23 +88,33 @@ distrobox: Installing basic packages...
 /usr/bin/apt-get
 /usr/bin/apt-get
 Get:1 http://deb.debian.org/debian stable-backports InRelease [54.0 kB]
-Get:2 https://packages.element.io/debian default InRelease [3,618 B]
-Hit:3 http://deb.debian.org/debian stable InRelease
+Hit:2 http://deb.debian.org/debian stable InRelease
+Hit:3 https://packages.element.io/debian default InRelease
 Get:4 http://deb.debian.org/debian stable-updates InRelease [47.3 kB]
-Get:5 https://packages.element.io/debian default/main amd64 Packages [1,033 B]
-Get:6 http://deb.debian.org/debian-security stable-security InRelease [43.4 kB]
-Get:7 http://deb.debian.org/debian stable-backports/main amd64 Packages.diff/Index [63.3 kB]
-Get:8 http://deb.debian.org/debian-security stable-security/main amd64 Packages [108 kB]
-Get:9 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-17-0209.58-F-2026-02-17-0209.58.pdiff [422 B]
-Get:9 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-17-0209.58-F-2026-02-17-0209.58.pdiff [422 B]
-Fetched 321 kB in 1s (359 kB/s)
+Get:5 http://deb.debian.org/debian-security stable-security InRelease [43.4 kB]
+Get:6 http://deb.debian.org/debian stable-backports/main amd64 Packages.diff/Index [63.3 kB]
+Get:7 http://deb.debian.org/debian-security stable-security/main amd64 Packages [108 kB]
+Get:8 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-18-0200.15-F-2026-02-18-0200.15.pdiff [618 B]
+Get:8 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-18-0200.15-F-2026-02-18-0200.15.pdiff [618 B]
+Fetched 316 kB in 1s (347 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-=== 2026-02-17 12:18:24 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
+The following packages will be upgraded:
+  libpng16-16t64
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 283 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Get:1 http://deb.debian.org/debian-security stable-security/main amd64 libpng16-16t64 amd64 1.6.48-1+deb13u3 [283 kB]
+Fetched 283 kB in 0s (2,938 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 21115 files and directories currently installed.)
+Preparing to unpack .../libpng16-16t64_1.6.48-1+deb13u3_amd64.deb ...
+Unpacking libpng16-16t64:amd64 (1.6.48-1+deb13u3) over (1.6.48-1+deb13u1) ...
+Setting up libpng16-16t64:amd64 (1.6.48-1+deb13u3) ...
+Processing triggers for libc-bin (2.41-12+deb13u1) ...
+=== 2026-02-18 00:25:26 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
@@ -199,29 +122,15 @@ Calculating upgrade...
 :: [1mChecking development packages...[0m
 :: [1mSearching databases for updates...[0m
  there is nothing to do
-=== 2026-02-17 12:18:25 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
+=== 2026-02-18 00:25:27 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
 Updating and loading repositories:
 Repositories loaded.
 Nothing to do.
-=== 2026-02-17 12:18:25 === /usr/bin/flatpak update -y
+=== 2026-02-18 00:25:28 === /usr/bin/flatpak update -y
 Looking for updates…
 
-
- 1.	   	org.remmina.Remmina.Locale	stable	u	flathub	< 1.8 MB (partial)
- 2.	   	org.remmina.Remmina	stable	u	flathub	< 13.0 MB
-
-
-Updating 1/2…
-Updating 1/2…                        0%  0 bytes/s
-Updating 1/2… ████████████████████ 100%
-Updating 2/2…
-Updating 2/2…                        0%  0 bytes/s
-Updating 2/2… ████████████████████ 100%
-Updates complete.
-=== 2026-02-17 12:18:28 === chezmoi status
-MM .Brewfile
-MM .bash_profile
-MM .zshrc
+Nothing to do.
+=== 2026-02-18 00:25:28 === chezmoi status
  A README.md
  A logs
  A logs/auto-update.log
