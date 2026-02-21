@@ -10,8 +10,3 @@ export PATH="/home/linuxbrew/.linuxbrew/opt/rustup/bin:$PATH"
 . "$HOME/.cargo/env"
 export QT_SCALE_FACTOR_ROUNDING_POLICY=Round
 export QT_FONT_DPI=120
-export OBSIDIAN_VAULT_PATH="/Users/you/Documents/MyVault"
-
-
-# filen-cli
-PATH=$PATH:~/.filen-cli/bin

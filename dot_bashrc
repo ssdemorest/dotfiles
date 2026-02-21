@@ -4,6 +4,9 @@
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
+if [ -f ./zshrc ]; then
+    . ./.zshrc
+fi
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
@@ -26,17 +29,17 @@ unset rc
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 
-. ./.zshrc
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 . "$HOME/.cargo/env"
 alias update-all='ujust update && distrobox enter arch-apps -- "yay -Syu --noconfirm" && flatpak update -y'
 
+# opencode
+export PATH=/home/ssdemorest/.opencode/bin:$PATH
+
+export OBSIDIAN_VAULT_PATH="/Users/you/Documents/MyVault"
+export DOCKER_HOST="unix:///run/user/$(id -u)/podman/podman.sock"
 
 # filen-cli
 PATH=$PATH:~/.filen-cli/bin
-
-# opencode
-export PATH=/home/ssdemorest/.opencode/bin:$PATH

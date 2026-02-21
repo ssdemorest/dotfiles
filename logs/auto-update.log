@@ -1,76 +1,90 @@
 
-=== 2026-02-20 00:42:35 === brew bundle dump --global --force
-=== 2026-02-20 00:42:37 === /usr/bin/distrobox upgrade -a
+=== 2026-02-21 00:17:57 === brew bundle dump --global --force
+=== 2026-02-21 00:17:59 === /usr/bin/distrobox upgrade -a
 [1;31m Upgrading arch...
-[0mdistrobox: Installing basic packages...
+[0mStarting container...                   	[32m [ OK ]
+[0mInstalling basic packages...            	[32m [ OK ]
+[0mSetting up devpts mounts...             	[32m [ OK ]
+[0mSetting up read-only mounts...          	[32m [ OK ]
+[0mSetting up read-write mounts...         	[32m [ OK ]
+[0mSetting up host's sockets integration...	[32m [ OK ]
+[0mIntegrating host's themes, icons, fonts...	[32m [ OK ]
+[0mSetting up distrobox profile...         	[32m [ OK ]
+[0mSetting up sudo...                      	[32m [ OK ]
+[0mSetting up user's group list...         	[32m [ OK ]
+[0m
+Container Setup Complete!
+distrobox: Installing basic packages...
 /usr/bin/pacman
 /usr/bin/pacman
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
 :: Starting full system upgrade...
- there is nothing to do
+resolving dependencies...
+looking for conflicting packages...
+
+Package (1)   Old Version  New Version  Net Change  Download Size
+
+extra/libvpx  1.15.2-2     1.15.2-3       0.00 MiB       1.27 MiB
+
+Total Download Size:   1.27 MiB
+Total Installed Size:  3.66 MiB
+Net Upgrade Size:      0.00 MiB
+
+:: Proceed with installation? [Y/n] 
+:: Retrieving packages...
+ libvpx-1.15.2-3-x86_64 downloading...
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+:: Running pre-transaction hooks...
+(1/1) Distrobox hook /etc/distrobox-pre-hook.sh...
+:: Processing package changes...
+upgrading libvpx...
+:: Running post-transaction hooks...
+(1/3) Arming ConditionNeedsUpdate...
+(2/3) Distrobox hook /etc/distrobox-post-hook.sh...
+(3/3) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
 [1;31m Upgrading fedora...
-[0mdistrobox: Installing basic packages...
+[0mStarting container...                   	[32m [ OK ]
+[0mInstalling basic packages...            	[32m [ OK ]
+[0mSetting up devpts mounts...             	[32m [ OK ]
+[0mSetting up read-only mounts...          	[32m [ OK ]
+[0mSetting up read-write mounts...         	[32m [ OK ]
+[0mSetting up host's sockets integration...	[32m [ OK ]
+[0mIntegrating host's themes, icons, fonts...	[32m [ OK ]
+[0mSetting up distrobox profile...         	[32m [ OK ]
+[0mSetting up sudo...                      	[32m [ OK ]
+[0mSetting up user's group list...         	[32m [ OK ]
+[0m
+Container Setup Complete!
+distrobox: Installing basic packages...
 /usr/sbin/dnf
 /usr/sbin/dnf
 Updating and loading repositories:
- Antigravity RPM Repository             100% |   2.6 KiB/s |   1.4 KiB |  00m01s
- google-chrome                          100% |   2.5 KiB/s |   1.3 KiB |  00m01s
- Fedora 42 - x86_64 - Updates           100% |   1.5 KiB/s |   9.2 KiB |  00m06s
+ Fedora 42 - x86_64                     100% |  39.2 KiB/s |  28.9 KiB |  00m01s
+ Fedora 42 - x86_64 - Updates           100% |  21.2 KiB/s |   8.3 KiB |  00m00s
 Repositories loaded.
-Package                           Arch   Version           Repository         Size
-Upgrading:
- google-chrome-stable             x86_64 145.0.7632.109-1  google-chrome 385.8 MiB
-   replacing google-chrome-stable x86_64 145.0.7632.75-1   google-chrome 386.9 MiB
- vim-data                         noarch 2:9.1.2146-2.fc42 updates        10.2 KiB
-   replacing vim-data             noarch 2:9.1.2146-1.fc42 updates        10.2 KiB
- vim-minimal                      x86_64 2:9.1.2146-2.fc42 updates         1.7 MiB
-   replacing vim-minimal          x86_64 2:9.1.2146-1.fc42 updates         1.7 MiB
-
-Transaction Summary:
- Upgrading:          3 packages
- Replacing:          3 packages
-
-Total size of inbound packages is 120 MiB. Need to download 120 MiB.
-After this operation, 1 MiB will be freed (install 388 MiB, remove 389 MiB).
-[1/3] vim-data-2:9.1.2146-2.fc42.noarch 100% |  37.8 KiB/s |  17.3 KiB |  00m00s
-[2/3] vim-minimal-2:9.1.2146-2.fc42.x86 100% | 111.1 KiB/s | 851.0 KiB |  00m08s
-[3/3] google-chrome-stable-0:145.0.7632 100% | 368.8 KiB/s | 118.7 MiB |  05m30s
---------------------------------------------------------------------------------
-[3/3] Total                             100% | 371.4 KiB/s | 119.5 MiB |  05m30s
-Running transaction
-[1/8] Verify package files              100% |  13.0   B/s |   3.0   B |  00m00s
-[2/8] Prepare transaction               100% | 176.0   B/s |   6.0   B |  00m00s
-[3/8] Upgrading vim-data-2:9.1.2146-2.f 100% |   3.7 MiB/s |  11.3 KiB |  00m00s
-[4/8] Upgrading vim-minimal-2:9.1.2146- 100% | 101.6 MiB/s |   1.7 MiB |  00m00s
-[5/8] Upgrading google-chrome-stable-0: 100% | 118.6 MiB/s | 385.8 MiB |  00m03s
-[6/8] Removing google-chrome-stable-0:1 100% |  22.3 KiB/s | 274.0   B |  00m00s
-[7/8] Removing vim-minimal-2:9.1.2146-1 100% |   2.9 KiB/s |  15.0   B |  00m00s
-[8/8] Removing vim-data-2:9.1.2146-1.fc 100% |  51.0   B/s |   7.0   B |  00m00s
-Complete!
+Nothing to do.
 [1;31m Upgrading debian...
 [0mdistrobox: Installing basic packages...
 /usr/bin/apt-get
 /usr/bin/apt-get
-Get:1 http://deb.debian.org/debian stable-backports InRelease [54.0 kB]
-Hit:2 https://packages.element.io/debian default InRelease
-Hit:3 https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev antigravity-debian InRelease
-Hit:4 http://deb.debian.org/debian stable InRelease
-Get:5 http://deb.debian.org/debian stable-updates InRelease [47.3 kB]
-Get:6 http://deb.debian.org/debian-security stable-security InRelease [43.4 kB]
-Get:7 http://deb.debian.org/debian stable-backports/main amd64 Packages.diff/Index [63.3 kB]
-Get:8 http://deb.debian.org/debian-security stable-security/main amd64 Packages [112 kB]
-Get:9 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-20-0809.48-F-2026-02-20-0809.48.pdiff [515 B]
-Get:9 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-20-0809.48-F-2026-02-20-0809.48.pdiff [515 B]
-Fetched 320 kB in 1s (278 kB/s)
+Hit:1 http://deb.debian.org/debian stable-backports InRelease
+Hit:2 http://deb.debian.org/debian stable InRelease
+Hit:3 https://packages.element.io/debian default InRelease
+Hit:4 http://deb.debian.org/debian stable-updates InRelease
+Hit:5 https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev antigravity-debian InRelease
+Hit:6 http://deb.debian.org/debian-security stable-security InRelease
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-=== 2026-02-20 00:49:16 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
+=== 2026-02-21 00:18:07 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
@@ -78,17 +92,18 @@ Calculating upgrade...
 :: [1mChecking development packages...[0m
 :: [1mSearching databases for updates...[0m
  there is nothing to do
-=== 2026-02-20 00:49:18 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
+=== 2026-02-21 00:18:08 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
 Updating and loading repositories:
- google-chrome                          100% |  11.5 KiB/s |   1.3 KiB |  00m00s
 Repositories loaded.
 Nothing to do.
-=== 2026-02-20 00:49:18 === /usr/bin/flatpak update -y
+=== 2026-02-21 00:18:09 === /usr/bin/flatpak update -y
 Looking for updates…
 
 Nothing to do.
-=== 2026-02-20 00:49:18 === chezmoi status
+=== 2026-02-21 00:18:09 === chezmoi status
 MM .Brewfile
+MM .bash_profile
+MM .bashrc
  A README.md
  A logs
  A logs/auto-update.log
