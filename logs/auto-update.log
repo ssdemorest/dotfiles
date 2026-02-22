@@ -1,6 +1,6 @@
 
-=== 2026-02-21 00:17:57 === brew bundle dump --global --force
-=== 2026-02-21 00:17:59 === /usr/bin/distrobox upgrade -a
+=== 2026-02-22 00:25:26 === brew bundle dump --global --force
+=== 2026-02-22 00:25:28 === /usr/bin/distrobox upgrade -a
 [1;31m Upgrading arch...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -24,17 +24,23 @@ distrobox: Installing basic packages...
 resolving dependencies...
 looking for conflicting packages...
 
-Package (1)   Old Version  New Version  Net Change  Download Size
+Package (4)        Old Version  New Version  Net Change  Download Size
 
-extra/libvpx  1.15.2-2     1.15.2-3       0.00 MiB       1.27 MiB
+core/iproute2      6.19.0-1     6.19.0-2       0.00 MiB       1.14 MiB
+core/libgcrypt     1.12.0-1     1.12.1-1       0.00 MiB       0.72 MiB
+extra/vim          9.2.0010-1   9.2.0038-1     0.01 MiB       2.37 MiB
+extra/vim-runtime  9.2.0010-1   9.2.0038-1     0.46 MiB       7.52 MiB
 
-Total Download Size:   1.27 MiB
-Total Installed Size:  3.66 MiB
-Net Upgrade Size:      0.00 MiB
+Total Download Size:   11.75 MiB
+Total Installed Size:  48.27 MiB
+Net Upgrade Size:       0.48 MiB
 
 :: Proceed with installation? [Y/n] 
 :: Retrieving packages...
- libvpx-1.15.2-3-x86_64 downloading...
+ vim-runtime-9.2.0038-1-x86_64 downloading...
+ vim-9.2.0038-1-x86_64 downloading...
+ iproute2-6.19.0-2-x86_64 downloading...
+ libgcrypt-1.12.1-1-x86_64 downloading...
 checking keyring...
 checking package integrity...
 loading package files...
@@ -42,11 +48,19 @@ checking for file conflicts...
 :: Running pre-transaction hooks...
 (1/1) Distrobox hook /etc/distrobox-pre-hook.sh...
 :: Processing package changes...
-upgrading libvpx...
+upgrading libgcrypt...
+upgrading iproute2...
+New optional dependencies for iproute2
+    db: userspace arp daemon
+upgrading vim-runtime...
+upgrading vim...
 :: Running post-transaction hooks...
-(1/3) Arming ConditionNeedsUpdate...
-(2/3) Distrobox hook /etc/distrobox-post-hook.sh...
-(3/3) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
+(1/6) Arming ConditionNeedsUpdate...
+(2/6) Distrobox hook /etc/distrobox-post-hook.sh...
+(3/6) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
+(4/6) Updating icon theme caches...
+(5/6) Updating the info directory file...
+(6/6) Updating the desktop file MIME type cache...
 [1;31m Upgrading fedora...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -64,46 +78,252 @@ distrobox: Installing basic packages...
 /usr/sbin/dnf
 /usr/sbin/dnf
 Updating and loading repositories:
- Fedora 42 - x86_64                     100% |  39.2 KiB/s |  28.9 KiB |  00m01s
- Fedora 42 - x86_64 - Updates           100% |  21.2 KiB/s |   8.3 KiB |  00m00s
+ Fedora 42 - x86_64 - Updates           100% |  14.8 KiB/s |   6.3 KiB |  00m00s
 Repositories loaded.
-Nothing to do.
+Package              Arch   Version          Repository      Size
+Upgrading:
+ tcpdump             x86_64 14:4.99.6-2.fc42 updates      1.2 MiB
+   replacing tcpdump x86_64 14:4.99.6-1.fc42 updates      1.2 MiB
+
+Transaction Summary:
+ Upgrading:          1 package
+ Replacing:          1 package
+
+Total size of inbound packages is 504 KiB. Need to download 504 KiB.
+After this operation, 24 B will be freed (install 1 MiB, remove 1 MiB).
+[1/1] tcpdump-14:4.99.6-2.fc42.x86_64   100% | 538.4 KiB/s | 504.0 KiB |  00m01s
+--------------------------------------------------------------------------------
+[1/1] Total                             100% | 538.4 KiB/s | 504.0 KiB |  00m01s
+Running transaction
+[1/4] Verify package files              100% |   0.0   B/s |   1.0   B |  00m00s
+[2/4] Prepare transaction               100% |  47.0   B/s |   2.0   B |  00m00s
+[3/4] Upgrading tcpdump-14:4.99.6-2.fc4 100% |  72.0 MiB/s |   1.2 MiB |  00m00s
+[4/4] Removing tcpdump-14:4.99.6-1.fc42 100% |  26.0   B/s |  16.0   B |  00m01s
+Complete!
 [1;31m Upgrading debian...
-[0mdistrobox: Installing basic packages...
+[0mStarting container...                   	[32m [ OK ]
+[0mInstalling basic packages...            	[32m [ OK ]
+[0mSetting up devpts mounts...             	[32m [ OK ]
+[0mSetting up read-only mounts...          	[32m [ OK ]
+[0mSetting up read-write mounts...         	[32m [ OK ]
+[0mSetting up host's sockets integration...	[32m [ OK ]
+[0mIntegrating host's themes, icons, fonts...	[32m [ OK ]
+[0mSetting up distrobox profile...         	[32m [ OK ]
+[0mSetting up sudo...                      	[32m [ OK ]
+[0mSetting up user's group list...         	[32m [ OK ]
+[0m
+Container Setup Complete!
+distrobox: Installing basic packages...
 /usr/bin/apt-get
 /usr/bin/apt-get
-Hit:1 http://deb.debian.org/debian stable-backports InRelease
+Get:1 http://deb.debian.org/debian stable-backports InRelease [54.0 kB]
 Hit:2 http://deb.debian.org/debian stable InRelease
-Hit:3 https://packages.element.io/debian default InRelease
-Hit:4 http://deb.debian.org/debian stable-updates InRelease
-Hit:5 https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev antigravity-debian InRelease
-Hit:6 http://deb.debian.org/debian-security stable-security InRelease
+Hit:3 https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev antigravity-debian InRelease
+Get:4 https://packages.element.io/debian default InRelease [3,618 B]
+Get:5 http://deb.debian.org/debian stable-updates InRelease [47.3 kB]
+Get:6 https://packages.element.io/debian default/main amd64 Packages [1,034 B]
+Get:7 http://deb.debian.org/debian-security stable-security InRelease [43.4 kB]
+Get:8 http://deb.debian.org/debian stable-backports/main amd64 Packages.diff/Index [63.3 kB]
+Get:9 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-22-0202.11-F-2026-02-21-0800.12.pdiff [7,228 B]
+Get:9 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-02-22-0202.11-F-2026-02-21-0800.12.pdiff [7,228 B]
+Fetched 220 kB in 1s (283 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-=== 2026-02-21 00:18:07 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
+=== 2026-02-22 00:25:39 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
 :: [1mSearching AUR for updates...[0m
 :: [1mChecking development packages...[0m
 :: [1mSearching databases for updates...[0m
- there is nothing to do
-=== 2026-02-21 00:18:08 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
+:: 1 package to upgrade/install.
+1  aur/arch-update  3.17.11-1 -> 3.18.0-1
+==> Packages to exclude: (eg: "1 2 3", "1-3", "^4" or repo name)
+ -> Excluding packages may cause partial upgrades and break systems
+==> 
+AUR Explicit (1): arch-update-3.18.0-1
+:: [1m(1/1) Downloaded PKGBUILD: arch-update[0m
+  1 arch-update                              (Installed) (Build Files Exist)
+==> Packages to cleanBuild?
+==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
+==> 
+  1 arch-update                              (Installed) (Build Files Exist)
+==> Diffs to show?
+==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
+==> 
+==> Making package: arch-update 3.18.0-1 (Sun 22 Feb 2026 12:25:41 AM PST)
+==> Retrieving sources...
+  -> Downloading arch-update-3.18.0.tar.gz...
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0
+  0      0   0      0   0      0      0      0                              0100 112.7k   0 112.7k   0      0 156.5k      0                              0100 112.7k   0 112.7k   0      0 156.5k      0                              0100 112.7k   0 112.7k   0      0 156.5k      0                              0
+==> WARNING: Skipping verification of source file PGP signatures.
+==> Validating source files with sha256sums...
+    arch-update-3.18.0.tar.gz ... Passed
+:: [1m(1/1) Parsing SRCINFO: arch-update[0m
+==> Making package: arch-update 3.18.0-1 (Sun 22 Feb 2026 12:25:42 AM PST)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+  -> Found arch-update-3.18.0.tar.gz
+==> Validating source files with sha256sums...
+    arch-update-3.18.0.tar.gz ... Passed
+==> Removing existing $srcdir/ directory...
+==> Extracting sources...
+  -> Extracting arch-update-3.18.0.tar.gz with bsdtar
+==> Starting prepare()...
+# Delete generated man pages
+rm -f "doc/man/arch-update.1"
+rm -f "doc/man/arch-update.conf.5"
+rm -f "doc/man/fr/arch-update.1"
+rm -f "doc/man/fr/arch-update.conf.5"
+# Delete generated translation files
+rm -f po/fr.mo
+rm -f po/sv.mo
+rm -f po/zh_CN.mo
+rm -f po/hu.mo
+rm -f po/de.mo
+rm -f po/pt_BR.mo
+rm -f po/es.mo
+rm -f po/zh_TW.mo
+rm -f po/ru.mo
+rm -f po/nb.mo
+rm -f po/nl.mo
+rm -f po/pt_PT.mo
+==> Sources are ready.
+==> Making package: arch-update 3.18.0-1 (Sun 22 Feb 2026 12:25:42 AM PST)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> WARNING: Using existing $srcdir/ tree
+==> Starting build()...
+# Generate man pages
+scdoc < "doc/man/arch-update.1.scd" > "doc/man/arch-update.1"
+scdoc < "doc/man/arch-update.conf.5.scd" > "doc/man/arch-update.conf.5"
+scdoc < "doc/man/fr/arch-update.1.scd" > "doc/man/fr/arch-update.1"
+scdoc < "doc/man/fr/arch-update.conf.5.scd" > "doc/man/fr/arch-update.conf.5"
+# Generate translation files
+msgfmt po/fr.po -o po/fr.mo
+msgfmt po/sv.po -o po/sv.mo
+msgfmt po/zh_CN.po -o po/zh_CN.mo
+msgfmt po/hu.po -o po/hu.mo
+msgfmt po/de.po -o po/de.mo
+msgfmt po/pt_BR.po -o po/pt_BR.mo
+msgfmt po/es.po -o po/es.mo
+msgfmt po/zh_TW.po -o po/zh_TW.mo
+msgfmt po/ru.po -o po/ru.mo
+msgfmt po/nb.po -o po/nb.mo
+msgfmt po/nl.po -o po/nl.mo
+msgfmt po/pt_PT.po -o po/pt_PT.mo
+==> Starting check()...
+# Run some simple unit tests on basic functions
+bats test/case/basic_functions.bats
+1..2
+ok 1 version
+ok 2 help
+==> Entering fakeroot environment...
+==> Starting package()...
+# Install main script
+install -Dm 755 "src/arch-update.sh" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/bin/arch-update"
+# Install libraries
+install -Dm 755 src/lib/* -t "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/arch-update/lib/"
+# Install icons
+install -Dm 664 res/icons/"arch-update"*.svg -t "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/icons/hicolor/scalable/apps/"
+install -Dm 664 res/icons/"arch-update"_updates-available*.svg -t "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/icons/hicolor/scalable/apps/"
+# Install .desktop files
+install -Dm 644 "res/desktop/arch-update.desktop" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/applications/arch-update.desktop"
+install -Dm 644 "res/desktop/arch-update-tray.desktop" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/applications/arch-update-tray.desktop"
+# Install systemd units
+install -Dm 644 "res/systemd/arch-update.service" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/lib/systemd/user/arch-update.service"
+install -Dm 644 "res/systemd/arch-update.timer" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/lib/systemd/user/arch-update.timer"
+install -Dm 644 "res/systemd/arch-update-tray.service" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/lib/systemd/user/arch-update-tray.service"
+# Install shell completions
+install -Dm 644 "res/completions/arch-update.bash" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/bash-completion/completions/arch-update"
+install -Dm 644 "res/completions/arch-update.zsh" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/zsh/site-functions/_arch-update"
+install -Dm 644 "res/completions/arch-update.fish" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/fish/vendor_completions.d/arch-update.fish"
+# Install man pages
+install -Dm 644 "doc/man/arch-update.1" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/man/man1/arch-update.1"
+install -Dm 644 "doc/man/arch-update.conf.5" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/man/man5/arch-update.conf.5"
+install -Dm 644 "doc/man/fr/arch-update.1" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/man/fr/man1/arch-update.1"
+install -Dm 644 "doc/man/fr/arch-update.conf.5" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/man/fr/man5/arch-update.conf.5"
+# Install translation files
+# Translation files are installed as "Arch-Update.mo" to avoid conflicting with the "arch-update.mo" files shipped by the arch-update Gnome extension (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/)
+install -Dm 644 po/fr.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/fr/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/sv.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/sv/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/zh_CN.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/zh_CN/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/hu.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/hu/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/de.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/de/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/pt_BR.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/pt_BR/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/es.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/es/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/zh_TW.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/zh_TW/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/ru.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/ru/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/nb.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/nb/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/nl.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/nl/LC_MESSAGES/Arch-Update.mo"
+install -Dm 644 po/pt_PT.mo "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/locale/pt_PT/LC_MESSAGES/Arch-Update.mo"
+# Install documentation
+install -Dm 644 README.md "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/doc/arch-update/README.md"
+install -Dm 644 README-fr.md "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/doc/arch-update/fr/README.md"
+# Install example config
+install -Dm 644 "res/config/arch-update.conf.example" "/home/ssdemorest/.cache/yay/arch-update/pkg/arch-update/usr/share/arch-update/config/arch-update.conf.example"
+==> Tidying install...
+  -> Removing libtool files...
+  -> Removing static library files...
+  -> Purging unwanted files...
+  -> Stripping unneeded symbols from binaries and libraries...
+  -> Compressing man and info pages...
+==> Checking for packaging issues...
+==> Creating package "arch-update"...
+  -> Generating .PKGINFO file...
+  -> Generating .BUILDINFO file...
+  -> Generating .MTREE file...
+  -> Compressing package...
+==> Leaving fakeroot environment.
+==> Finished making: arch-update 3.18.0-1 (Sun 22 Feb 2026 12:25:43 AM PST)
+==> Cleaning up...
+loading packages...
+resolving dependencies...
+looking for conflicting packages...
+
+Package (1)  Old Version  New Version  Net Change
+
+arch-update  3.17.11-1    3.18.0-1       0.01 MiB
+
+Total Installed Size:  0.34 MiB
+Net Upgrade Size:      0.01 MiB
+
+:: Proceed with installation? [Y/n] 
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+:: Running pre-transaction hooks...
+(1/1) Distrobox hook /etc/distrobox-pre-hook.sh...
+:: Processing package changes...
+upgrading arch-update...
+:: Running post-transaction hooks...
+(1/6) Reloading user manager configuration...
+(2/6) Arming ConditionNeedsUpdate...
+(3/6) Distrobox hook /etc/distrobox-post-hook.sh...
+(4/6) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
+(5/6) Updating icon theme caches...
+(6/6) Updating the desktop file MIME type cache...
+=== 2026-02-22 00:25:43 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
 Updating and loading repositories:
 Repositories loaded.
 Nothing to do.
-=== 2026-02-21 00:18:09 === /usr/bin/flatpak update -y
+=== 2026-02-22 00:25:43 === /usr/bin/flatpak update -y
 Looking for updates…
 
 Nothing to do.
-=== 2026-02-21 00:18:09 === chezmoi status
+=== 2026-02-22 00:25:44 === chezmoi status
 MM .Brewfile
 MM .bash_profile
 MM .bashrc
+MM .zshrc
  A README.md
  A logs
  A logs/auto-update.log

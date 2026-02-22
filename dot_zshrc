@@ -3,7 +3,9 @@ alias la='ls -a'
 alias arch-run='distrobox enter Arch --no-tty --'
 alias grep=rg
 alias kubectl="minikube kubectl --"
-alias vi=nvim
+alias nv=nvim
 
 # filen-cli
 PATH=$PATH:~/.filen-cli/bin
+
+. "$HOME/.local/share/../bin/env"
