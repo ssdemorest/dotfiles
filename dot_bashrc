@@ -45,3 +45,7 @@ export DOCKER_HOST="unix:///run/user/$(id -u)/podman/podman.sock"
 PATH=$PATH:~/.filen-cli/bin
 
 . "$HOME/.local/share/../bin/env"
+export PATH="$PATH:/var/roothome/.local/share/applications/Ignition"
+alias ignition="/var/roothome/.local/share/applications/Ignition/ignition.sh"
+export PATH="$PATH:/usr/local/bin/ignition"
+alias ignition="/usr/local/bin/ignition/ignition.sh"
