@@ -1,6 +1,6 @@
 
-=== 2026-02-24 08:54:30 === brew bundle dump --global --force
-=== 2026-02-24 08:54:32 === /usr/bin/distrobox upgrade -a
+=== 2026-02-25 00:11:18 === brew bundle dump --global --force
+=== 2026-02-25 00:11:20 === /usr/bin/distrobox upgrade -a
 [1;31m Upgrading arch...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -24,29 +24,17 @@ distrobox: Installing basic packages...
 resolving dependencies...
 looking for conflicting packages...
 
-Package (7)        Old Version    New Version    Net Change  Download Size
+Package (1)  Old Version  New Version  Net Change  Download Size
 
-core/gawk          5.3.2-1        5.4.0-1          0.42 MiB       1.45 MiB
-extra/glslang      1:1.4.341.0-1  1:1.4.341.0-2    0.00 MiB       2.39 MiB
-extra/libmupdf     1.27.2-1       1.27.2-2         0.00 MiB      28.47 MiB
-extra/libplacebo   7.360.0-1      7.360.0-2        0.00 MiB       0.50 MiB
-extra/parallel     20260122-1     20260222-1       0.00 MiB       0.33 MiB
-extra/shaderc      2026.1-1       2026.1-2         0.00 MiB       0.16 MiB
-extra/spirv-tools  1:1.4.341.0-1  1:1.4.341.0-2    0.00 MiB       1.91 MiB
+core/gpgme   2.0.1-1      2.0.1-3        0.00 MiB       0.31 MiB
 
-Total Download Size:   35.22 MiB
-Total Installed Size:  83.11 MiB
-Net Upgrade Size:       0.41 MiB
+Total Download Size:   0.31 MiB
+Total Installed Size:  0.75 MiB
+Net Upgrade Size:      0.00 MiB
 
 :: Proceed with installation? [Y/n] 
 :: Retrieving packages...
- libmupdf-1.27.2-2-x86_64 downloading...
- glslang-1:1.4.341.0-2-x86_64 downloading...
- spirv-tools-1:1.4.341.0-2-x86_64 downloading...
- gawk-5.4.0-1-x86_64 downloading...
- libplacebo-7.360.0-2-x86_64 downloading...
- parallel-20260222-1-any downloading...
- shaderc-2026.1-2-x86_64 downloading...
+ gpgme-2.0.1-3-x86_64 downloading...
 checking keyring...
 checking package integrity...
 loading package files...
@@ -54,13 +42,7 @@ checking for file conflicts...
 :: Running pre-transaction hooks...
 (1/1) Distrobox hook /etc/distrobox-pre-hook.sh...
 :: Processing package changes...
-upgrading gawk...
-upgrading spirv-tools...
-upgrading glslang...
-upgrading libmupdf...
-upgrading shaderc...
-upgrading libplacebo...
-upgrading parallel...
+upgrading gpgme...
 :: Running post-transaction hooks...
 (1/4) Arming ConditionNeedsUpdate...
 (2/4) Distrobox hook /etc/distrobox-post-hook.sh...
@@ -83,32 +65,29 @@ distrobox: Installing basic packages...
 /usr/sbin/dnf
 /usr/sbin/dnf
 Updating and loading repositories:
- Fedora 42 - x86_64 - Updates           100% |  48.5 KiB/s |  25.1 KiB |  00m01s
+ Antigravity RPM Repository             100% |   3.6 KiB/s |   1.4 KiB |  00m00s
+ google-chrome                          100% |   3.5 KiB/s |   1.3 KiB |  00m00s
+ Fedora 42 - x86_64 - Updates           100% |  28.5 KiB/s |  26.8 KiB |  00m01s
 Repositories loaded.
-Package               Arch   Version      Repository      Size
+Package                           Arch   Version          Repository         Size
 Upgrading:
- less                 x86_64 685-1.fc42   updates    413.4 KiB
-   replacing less     x86_64 679-1.fc42   updates    406.1 KiB
- libsoup3             x86_64 3.6.6-2.fc42 updates      1.7 MiB
-   replacing libsoup3 x86_64 3.6.5-6.fc42 updates      1.1 MiB
+ google-chrome-stable             x86_64 145.0.7632.116-1 google-chrome 385.9 MiB
+   replacing google-chrome-stable x86_64 145.0.7632.109-1 google-chrome 385.8 MiB
 
 Transaction Summary:
- Upgrading:          2 packages
- Replacing:          2 packages
+ Upgrading:          1 package
+ Replacing:          1 package
 
-Total size of inbound packages is 651 KiB. Need to download 651 KiB.
-After this operation, 625 KiB extra will be used (install 2 MiB, remove 2 MiB).
-[1/2] less-0:685-1.fc42.x86_64          100% | 176.5 KiB/s | 199.3 KiB |  00m01s
-[2/2] libsoup3-0:3.6.6-2.fc42.x86_64    100% | 297.9 KiB/s | 451.4 KiB |  00m02s
+Total size of inbound packages is 119 MiB. Need to download 119 MiB.
+After this operation, 63 KiB extra will be used (install 386 MiB, remove 386 MiB).
+[1/1] google-chrome-stable-0:145.0.7632 100% |  30.6 MiB/s | 118.7 MiB |  00m04s
 --------------------------------------------------------------------------------
-[2/2] Total                             100% | 429.5 KiB/s | 650.7 KiB |  00m02s
+[1/1] Total                             100% |  30.6 MiB/s | 118.7 MiB |  00m04s
 Running transaction
-[1/6] Verify package files              100% |   1.0 KiB/s |   2.0   B |  00m00s
-[2/6] Prepare transaction               100% |  95.0   B/s |   4.0   B |  00m00s
-[3/6] Upgrading libsoup3-0:3.6.6-2.fc42 100% | 222.6 MiB/s |   1.8 MiB |  00m00s
-[4/6] Upgrading less-0:685-1.fc42.x86_6 100% |  33.9 MiB/s | 416.8 KiB |  00m00s
-[5/6] Removing libsoup3-0:3.6.5-6.fc42. 100% |  11.4 KiB/s |  82.0   B |  00m00s
-[6/6] Removing less-0:679-1.fc42.x86_64 100% |  45.0   B/s |  23.0   B |  00m01s
+[1/4] Verify package files              100% |   4.0   B/s |   1.0   B |  00m00s
+[2/4] Prepare transaction               100% | 105.0   B/s |   2.0   B |  00m00s
+[3/4] Upgrading google-chrome-stable-0: 100% | 116.8 MiB/s | 385.9 MiB |  00m03s
+[4/4] Removing google-chrome-stable-0:1 100% |   3.1 KiB/s | 274.0   B |  00m00s
 Complete!
 [1;31m Upgrading debian...
 [0mStarting container...                   	[32m [ OK ]
@@ -126,21 +105,33 @@ Container Setup Complete!
 distrobox: Installing basic packages...
 /usr/bin/apt-get
 /usr/bin/apt-get
-Get:1 http://deb.debian.org/debian stable-backports InRelease [54.0 kB]
+Hit:1 http://deb.debian.org/debian stable-backports InRelease
 Hit:2 http://deb.debian.org/debian stable InRelease
-Get:3 http://deb.debian.org/debian stable-updates InRelease [47.3 kB]
-Get:4 http://deb.debian.org/debian-security stable-security InRelease [43.4 kB]
-Hit:5 https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev antigravity-debian InRelease
-Get:6 https://packages.element.io/debian default InRelease [3,618 B]
-Get:7 https://packages.element.io/debian default/main amd64 Packages [1,036 B]
-Fetched 149 kB in 1s (203 kB/s)
+Hit:3 http://deb.debian.org/debian stable-updates InRelease
+Hit:4 https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev antigravity-debian InRelease
+Get:5 https://packages.element.io/debian default InRelease [3,618 B]
+Hit:6 http://deb.debian.org/debian-security stable-security InRelease
+Get:7 https://packages.element.io/debian default/main amd64 Packages [1,032 B]
+Fetched 4,650 B in 1s (7,941 B/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-=== 2026-02-24 08:54:47 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
+The following packages will be upgraded:
+  element-desktop
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 132 MB of archives.
+After this operation, 80.4 MB disk space will be freed.
+Get:1 https://packages.element.io/debian default/main amd64 element-desktop amd64 1.12.11 [132 MB]
+Fetched 132 MB in 4s (30.9 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22344 files and directories currently installed.)
+Preparing to unpack .../element-desktop_1.12.11_amd64.deb ...
+Unpacking element-desktop (1.12.11) over (1.12.10) ...
+Setting up element-desktop (1.12.11) ...
+update-alternatives is /usr/bin/update-alternatives
+Processing triggers for hicolor-icon-theme (0.18-2) ...
+=== 2026-02-25 00:11:43 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
@@ -148,69 +139,45 @@ Calculating upgrade...
 :: [1mChecking development packages...[0m
 :: [1mSearching databases for updates...[0m
  there is nothing to do
-=== 2026-02-24 08:54:48 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
+=== 2026-02-25 00:11:45 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
 Updating and loading repositories:
+ google-chrome                          100% |  12.5 KiB/s |   1.3 KiB |  00m00s
 Repositories loaded.
 Nothing to do.
-=== 2026-02-24 08:54:49 === /usr/bin/flatpak update -y
+=== 2026-02-25 00:11:45 === /usr/bin/flatpak update -y
 Looking for updates…
 
 
- 1.	   	com.obsproject.Studio.Plugin.OBSVkCapture	stable	u	flathub	< 51.3 kB
- 2.	   	com.ranfdev.DistroShelf.Locale	stable	u	flathub	< 158.8 kB
- 3.	   	com.vysp3r.ProtonPlus.Locale	stable	u	flathub	< 122.2 kB
- 4.	   	it.mijorus.gearlever.Locale	stable	u	flathub	< 96.6 kB (partial)
- 5.	   	org.telegram.desktop	stable	u	flathub	< 90.6 MB
- 6.	   	it.mijorus.gearlever	stable	u	flathub	< 9.5 MB
- 7.	   	com.vysp3r.ProtonPlus	stable	u	flathub	< 1.0 MB
- 8.	   	com.ranfdev.DistroShelf	stable	u	flathub	< 3.8 MB
- 9.	   	com.github.Matoking.protontricks	stable	u	flathub	< 7.5 MB
-10.	   	com.discordapp.Discord	stable	u	flathub	< 112.8 MB
+ 1.	   	com.ranfdev.DistroShelf.Locale	stable	u	flathub	< 163.9 kB
+ 2.	   	com.ranfdev.DistroShelf	stable	u	flathub	< 3.8 MB
+ 3.	   	com.brave.Browser	stable	u	flathub	< 194.3 MB
 
 
-Updating 1/10…
-Updating 1/10…                        0%  0 bytes/s
-Updating 1/10… ████████████████████ 100%
-Updating 2/10…
-Updating 2/10…                        0%  0 bytes/s
-Updating 2/10… █                      5%
-Updating 2/10… ████████████████████ 100%
-Updating 3/10…
-Updating 3/10…                        0%  0 bytes/s
-Updating 3/10… ▌                      3%
-Updating 3/10… ████████████████████ 100%
-Updating 4/10…
-Updating 4/10…                        0%  0 bytes/s
-Updating 4/10… ████████████████████ 100%
-Updating 5/10…
-Updating 5/10…                        0%  0 bytes/s
-Updating 5/10… ██▌                   13%
-Updating 5/10… ████▍                 22%
-Updating 5/10… ███████               35%
-Updating 5/10… █████████▏            46%  31.5 MB/s
-Updating 5/10… ███████████▌          58%  41.7 MB/s
-Updating 5/10… ██████████████▏       71%  51.8 MB/s
-Updating 5/10… ████████████████▊     84%  31.1 MB/s
-Updating 5/10… ███████████████████▏  96%  36.1 MB/s
-Updating 5/10… ████████████████████ 100%  37.6 MB/s
-Updating 5/10… ████████████████████ 100%  25.1 MB/s
-Updating 6/10…
-Updating 6/10…                        0%  0 bytes/s
-Updating 6/10… ████████████████████ 100%
-Updating 7/10…
-Updating 7/10…                        0%  0 bytes/s
-Updating 7/10… ████████████████████ 100%
-Updating 8/10…
-Updating 8/10…                        0%  0 bytes/s
-Updating 8/10… ████████████████████ 100%
-Updating 9/10…
-Updating 9/10…                        0%  0 bytes/s
-Updating 9/10… ████████████████████ 100%
-Updating 10/10…
-Updating 10/10…                        0%  0 bytes/s
-Updating 10/10… ████████████████████ 100%
+Updating 1/3…
+Updating 1/3…                        0%  0 bytes/s
+Updating 1/3… ▌                      3%
+Updating 1/3… ████████████████████ 100%
+Updating 2/3…
+Updating 2/3…                        0%  0 bytes/s
+Updating 2/3… ████████████████████ 100%
+Updating 3/3…
+Updating 3/3…                        0%  0 bytes/s
+Updating 3/3… █▌                     8%
+Updating 3/3… ███▌                  18%
+Updating 3/3… █████                 25%  24.3 MB/s
+Updating 3/3… ██████▌               33%  35.4 MB/s
+Updating 3/3… ████████▏             41%  46.3 MB/s
+Updating 3/3… █████████▊            49%  57.5 MB/s
+Updating 3/3… ███████████▍          57%  34.2 MB/s
+Updating 3/3… █████████████         65%  39.8 MB/s
+Updating 3/3… ██████████████▌       73%  44.8 MB/s
+Updating 3/3… ████████████████▏     81%  33.8 MB/s
+Updating 3/3… █████████████████▊    89%  37.3 MB/s
+Updating 3/3… ███████████████████▍  97%  40.9 MB/s
+Updating 3/3… ████████████████████ 100%  31.5 MB/s  00:00
+Updating 3/3… ████████████████████ 100%  31.5 MB/s  00:00
 Updates complete.
-=== 2026-02-24 08:54:59 === chezmoi status
+=== 2026-02-25 00:11:53 === chezmoi status
  A README.md
  A logs
  A logs/auto-update.log
