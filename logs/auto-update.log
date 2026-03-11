@@ -1,6 +1,6 @@
 
-=== 2026-03-10 00:49:03 === brew bundle dump --global --force
-=== 2026-03-10 00:49:05 === /usr/bin/distrobox upgrade -a
+=== 2026-03-11 14:27:45 === brew bundle dump --global --force
+=== 2026-03-11 14:27:47 === /usr/bin/distrobox upgrade -a
 [1;31m Upgrading arch...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -24,17 +24,33 @@ distrobox: Installing basic packages...
 resolving dependencies...
 looking for conflicting packages...
 
-Package (1)             Old Version  New Version  Net Change  Download Size
+Package (9)        Old Version     New Version     Net Change  Download Size
 
-extra/python-pyqt6-sip  13.11.0-1    13.11.1-1      0.00 MiB       0.06 MiB
+core/curl          8.18.0-3        8.19.0-1          0.00 MiB       1.23 MiB
+core/e2fsprogs     1.47.3-2        1.47.4-1          0.00 MiB       1.24 MiB
+core/libarchive    3.8.5-1         3.8.6-1           0.00 MiB       0.55 MiB
+extra/libbluray    1.4.0-2         1.4.1-1           0.01 MiB       0.86 MiB
+core/libedit       20250104_3.1-1  20251016_3.1-1    0.00 MiB       0.11 MiB
+core/libldap       2.6.12-1        2.6.13-1          0.00 MiB       0.28 MiB
+extra/libpipewire  1:1.6.0-2       1:1.6.1-1         0.00 MiB       0.49 MiB
+extra/libva        2.22.0-1        2.23.0-1          0.01 MiB       0.20 MiB
+extra/pipewire     1:1.6.0-2       1:1.6.1-1         0.00 MiB       0.67 MiB
 
-Total Download Size:   0.06 MiB
-Total Installed Size:  0.14 MiB
-Net Upgrade Size:      0.00 MiB
+Total Download Size:    5.62 MiB
+Total Installed Size:  16.68 MiB
+Net Upgrade Size:       0.03 MiB
 
 :: Proceed with installation? [Y/n] 
 :: Retrieving packages...
- python-pyqt6-sip-13.11.1-1-x86_64 downloading...
+ e2fsprogs-1.47.4-1-x86_64 downloading...
+ curl-8.19.0-1-x86_64 downloading...
+ libbluray-1.4.1-1-x86_64 downloading...
+ pipewire-1:1.6.1-1-x86_64 downloading...
+ libarchive-3.8.6-1-x86_64 downloading...
+ libpipewire-1:1.6.1-1-x86_64 downloading...
+ libldap-2.6.13-1-x86_64 downloading...
+ libva-2.23.0-1-x86_64 downloading...
+ libedit-20251016_3.1-1-x86_64 downloading...
 checking keyring...
 checking package integrity...
 loading package files...
@@ -42,11 +58,24 @@ checking for file conflicts...
 :: Running pre-transaction hooks...
 (1/1) Distrobox hook /etc/distrobox-pre-hook.sh...
 :: Processing package changes...
-upgrading python-pyqt6-sip...
+upgrading e2fsprogs...
+upgrading libldap...
+upgrading curl...
+upgrading libarchive...
+upgrading libbluray...
+upgrading libedit...
+upgrading libpipewire...
+upgrading libva...
+upgrading pipewire...
 :: Running post-transaction hooks...
-(1/3) Arming ConditionNeedsUpdate...
-(2/3) Distrobox hook /etc/distrobox-post-hook.sh...
-(3/3) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
+(1/8) Reloading system manager configuration...
+(2/8) Reloading user manager configuration...
+(3/8) Restarting marked services...
+(4/8) Reloading device manager configuration...
+(5/8) Arming ConditionNeedsUpdate...
+(6/8) Distrobox hook /etc/distrobox-post-hook.sh...
+(7/8) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
+(8/8) Updating the info directory file...
 [1;31m Upgrading fedora...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -64,11 +93,38 @@ distrobox: Installing basic packages...
 /usr/sbin/dnf
 /usr/sbin/dnf
 Updating and loading repositories:
- Antigravity RPM Repository             100% |   3.0 KiB/s |   1.4 KiB |  00m00s
- Fedora 42 - x86_64 - Updates           100% |   5.3 KiB/s |   5.4 KiB |  00m01s
- google-chrome                          100% |   2.8 KiB/s |   1.3 KiB |  00m00s
+ Fedora 42 - x86_64 - Updates           100% |  43.3 KiB/s |  23.2 KiB |  00m01s
 Repositories loaded.
-Nothing to do.
+Package                  Arch   Version       Repository                            Size
+Upgrading:
+ rpm-sequoia             x86_64 1.10.1-1.fc42 updates                            2.4 MiB
+   replacing rpm-sequoia x86_64 1.10.0-1.fc42 a0178fed87de4084b1f6e05bdf00b044   2.5 MiB
+ whois                   x86_64 5.6.6-1.fc42  updates                          173.3 KiB
+   replacing whois       x86_64 5.6.5-1.fc42  updates                          173.0 KiB
+ whois-nls               noarch 5.6.6-1.fc42  updates                          132.2 KiB
+   replacing whois-nls   noarch 5.6.5-1.fc42  updates                          132.2 KiB
+
+Transaction Summary:
+ Upgrading:          3 packages
+ Replacing:          3 packages
+
+Total size of inbound packages is 1 MiB. Need to download 1 MiB.
+After this operation, 132 KiB will be freed (install 3 MiB, remove 3 MiB).
+[1/3] whois-nls-0:5.6.6-1.fc42.noarch   100% |  51.2 KiB/s |  37.0 KiB |  00m01s
+[2/3] whois-0:5.6.6-1.fc42.x86_64       100% |  81.9 KiB/s |  66.2 KiB |  00m01s
+[3/3] rpm-sequoia-0:1.10.1-1.fc42.x86_6 100% | 237.1 KiB/s | 916.7 KiB |  00m04s
+--------------------------------------------------------------------------------
+[3/3] Total                             100% | 263.7 KiB/s |   1.0 MiB |  00m04s
+Running transaction
+[1/8] Verify package files              100% |   1.5 KiB/s |   3.0   B |  00m00s
+[2/8] Prepare transaction               100% | 146.0   B/s |   6.0   B |  00m00s
+[3/8] Upgrading whois-nls-0:5.6.6-1.fc4 100% |  43.9 MiB/s | 134.8 KiB |  00m00s
+[4/8] Upgrading whois-0:5.6.6-1.fc42.x8 100% |  10.1 MiB/s | 175.2 KiB |  00m00s
+[5/8] Upgrading rpm-sequoia-0:1.10.1-1. 100% | 197.4 MiB/s |   2.4 MiB |  00m00s
+[6/8] Removing whois-0:5.6.5-1.fc42.x86 100% |   1.6 KiB/s |  15.0   B |  00m00s
+[7/8] Removing whois-nls-0:5.6.5-1.fc42 100% |  15.6 KiB/s |  16.0   B |  00m00s
+[8/8] Removing rpm-sequoia-0:1.10.0-1.f 100% |  22.0   B/s |   9.0   B |  00m00s
+Complete!
 [1;31m Upgrading debian...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -86,26 +142,35 @@ distrobox: Installing basic packages...
 /usr/bin/apt-get
 /usr/bin/apt-get
 Get:1 http://deb.debian.org/debian stable-backports InRelease [54.0 kB]
-Get:2 https://packages.element.io/debian default InRelease [3,618 B]
-Hit:3 http://deb.debian.org/debian stable InRelease
-Get:4 https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev antigravity-debian InRelease [1,296 B]
-Get:5 http://deb.debian.org/debian stable-updates InRelease [47.3 kB]
-Get:6 http://deb.debian.org/debian-security stable-security InRelease [43.4 kB]
-Get:7 https://packages.element.io/debian default/main amd64 Packages [1,030 B]
-Get:8 https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev antigravity-debian/main amd64 Packages [30.6 kB]
-Get:9 http://deb.debian.org/debian stable-backports/main amd64 Packages.diff/Index [63.3 kB]
-Get:10 http://deb.debian.org/debian-security stable-security/main amd64 Packages [108 kB]
-Get:11 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-03-09-2010.04-F-2026-03-09-0800.31.pdiff [418 B]
-Get:11 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-03-09-2010.04-F-2026-03-09-0800.31.pdiff [418 B]
-Fetched 353 kB in 1s (410 kB/s)
+Hit:2 http://deb.debian.org/debian stable InRelease
+Get:3 https://packages.element.io/debian default InRelease [3,618 B]
+Get:4 http://deb.debian.org/debian stable-updates InRelease [47.3 kB]
+Get:5 http://deb.debian.org/debian-security stable-security InRelease [43.4 kB]
+Get:6 https://packages.element.io/debian default/main amd64 Packages [1,034 B]
+Hit:7 https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev antigravity-debian InRelease
+Get:8 http://deb.debian.org/debian stable-backports/main amd64 Packages.diff/Index [63.3 kB]
+Get:9 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-03-11-2000.15-F-2026-03-10-0801.26.pdiff [4,829 B]
+Get:9 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-03-11-2000.15-F-2026-03-10-0801.26.pdiff [4,829 B]
+Fetched 218 kB in 1s (243 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-=== 2026-03-10 00:49:15 === /usr/bin/distrobox enter arch --no-tty -- sudo rm -f /var/lib/pacman/db.lck
-=== 2026-03-10 00:49:15 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
+The following packages will be upgraded:
+  element-desktop
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 132 MB of archives.
+After this operation, 251 kB of additional disk space will be used.
+Get:1 https://packages.element.io/debian default/main amd64 element-desktop amd64 1.12.12 [132 MB]
+Fetched 132 MB in 4s (32.3 MB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22357 files and directories currently installed.)
+Preparing to unpack .../element-desktop_1.12.12_amd64.deb ...
+Unpacking element-desktop (1.12.12) over (1.12.11) ...
+Setting up element-desktop (1.12.12) ...
+Processing triggers for hicolor-icon-theme (0.18-2) ...
+=== 2026-03-11 14:28:15 === /usr/bin/distrobox enter arch --no-tty -- sudo rm -f /var/lib/pacman/db.lck
+=== 2026-03-11 14:28:15 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
@@ -113,13 +178,13 @@ Calculating upgrade...
 :: [1mChecking development packages...[0m
 :: [1mSearching databases for updates...[0m
  there is nothing to do
-=== 2026-03-10 00:49:16 === /usr/bin/ujust update --yes
+=== 2026-03-11 14:28:16 === /usr/bin/ujust update --yes
 error: Justfile does not contain recipe `--yes`
-=== 2026-03-10 00:49:16 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
+=== 2026-03-11 14:28:16 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
 Updating and loading repositories:
 Repositories loaded.
 Nothing to do.
-=== 2026-03-10 00:49:16 === /usr/bin/distrobox enter debian -- bash -c sudo apt update && sudo apt upgrade -y
+=== 2026-03-11 14:28:17 === /usr/bin/distrobox enter debian -- bash -c sudo apt update && sudo apt upgrade -y
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -142,7 +207,7 @@ Reading state information...
 Calculating upgrade...
 Summary:
   Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 0
-=== 2026-03-10 00:49:17 === chezmoi status
+=== 2026-03-11 14:28:18 === chezmoi status
  A README.md
  A logs
  A logs/auto-update.log
