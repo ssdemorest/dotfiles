@@ -1,6 +1,6 @@
 
-=== 2026-03-13 16:16:39 === brew bundle dump --global --force
-=== 2026-03-13 16:16:42 === /usr/bin/distrobox upgrade -a
+=== 2026-03-14 02:48:14 === brew bundle dump --global --force
+=== 2026-03-14 02:48:16 === /usr/bin/distrobox upgrade -a
 [1;31m Upgrading arch...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -21,78 +21,7 @@ distrobox: Installing basic packages...
  core downloading...
  extra downloading...
 :: Starting full system upgrade...
-resolving dependencies...
-looking for conflicting packages...
-
-Package (5)              Old Version  New Version  Net Change  Download Size
-
-extra/harfbuzz           12.3.2-1     13.1.1-1       0.34 MiB       1.21 MiB
-extra/libsoup3           3.6.6-1      3.6.6-2        0.00 MiB       0.39 MiB
-core/systemd             259.3-1      259.5-1        0.08 MiB       9.45 MiB
-core/systemd-libs        259.3-1      259.5-1        0.00 MiB       1.25 MiB
-core/systemd-sysvcompat  259.3-1      259.5-1        0.00 MiB       0.01 MiB
-
-Total Download Size:   12.31 MiB
-Total Installed Size:  45.92 MiB
-Net Upgrade Size:       0.42 MiB
-
-:: Proceed with installation? [Y/n] 
-:: Retrieving packages...
- systemd-259.5-1-x86_64 downloading...
- systemd-libs-259.5-1-x86_64 downloading...
- harfbuzz-13.1.1-1-x86_64 downloading...
- libsoup3-3.6.6-2-x86_64 downloading...
- systemd-sysvcompat-259.5-1-x86_64 downloading...
-checking keyring...
-checking package integrity...
-loading package files...
-checking for file conflicts...
-:: Running pre-transaction hooks...
-(1/1) Distrobox hook /etc/distrobox-pre-hook.sh...
-:: Processing package changes...
-upgrading harfbuzz...
-upgrading systemd-libs...
-upgrading libsoup3...
-upgrading systemd...
-upgrading systemd-sysvcompat...
-:: Running post-transaction hooks...
-( 1/14) Creating system user accounts...
-( 2/14) Creating temporary files...
-fchownat() of /tmp failed: Operation not permitted
-fchownat() of /run/media failed: Operation not permitted
-fchownat() of /dev/snd/seq failed: Operation not permitted
-fchownat() of /dev/snd/timer failed: Operation not permitted
-fchownat() of /dev/loop-control failed: Operation not permitted
-fchownat() of /dev/kvm failed: Operation not permitted
-fchownat() of /dev/vhost-net failed: Operation not permitted
-fchownat() of /dev/vhost-vsock failed: Operation not permitted
-fchownat() of /sys/kernel/security/tpm0/binary_bios_measurements failed: Operation not permitted
-fchownat() of /sys/kernel/security/ima/binary_runtime_measurements failed: Operation not permitted
-error: command failed to execute correctly
-( 3/14) Updating journal message catalog...
-( 4/14) Updating udev hardware database...
-( 5/14) Applying kernel sysctl settings...
-Failed to check for chroot() environment: Permission denied
-  Skipped: Current root is not booted.
-( 6/14) Reloading system manager configuration...
-Failed to check for chroot() environment: Permission denied
-  Skipped: Current root is not booted.
-( 7/14) Reloading user manager configuration...
-Failed to check for chroot() environment: Permission denied
-  Skipped: Current root is not booted.
-( 8/14) Updating the MIME type database...
-( 9/14) Restarting marked services...
-Failed to check for chroot() environment: Permission denied
-  Skipped: Current root is not booted.
-(10/14) Reloading device manager configuration...
-Failed to check for chroot() environment: Permission denied
-  Skipped: Current root is not booted.
-(11/14) Arming ConditionNeedsUpdate...
-(12/14) Reloading system bus configuration...
-Failed to check for chroot() environment: Permission denied
-  Skipped: Current root is not booted.
-(13/14) Distrobox hook /etc/distrobox-post-hook.sh...
-(14/14) Distrobox hook /usr/share/libalpm/scripts/distrobox_post_hook.sh...
+ there is nothing to do
 [1;31m Upgrading fedora...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -110,55 +39,10 @@ distrobox: Installing basic packages...
 /usr/sbin/dnf
 /usr/sbin/dnf
 Updating and loading repositories:
- Antigravity RPM Repository             100% |   3.3 KiB/s |   1.4 KiB |  00m00s
- Fedora 42 - x86_64 - Updates           100% |  26.0 KiB/s |  25.0 KiB |  00m01s
- google-chrome                          100% |   3.2 KiB/s |   1.3 KiB |  00m00s
+ Fedora 42 - x86_64 - Updates           100% |  31.9 KiB/s |  26.4 KiB |  00m01s
+ Fedora 42 openh264 (From Cisco) - x86_ 100% |   3.3 KiB/s | 986.0   B |  00m00s
 Repositories loaded.
-Package                                      Arch   Version          Repository         Size
-Upgrading:
- dnf5                                        x86_64 5.2.18.0-2.fc42  updates         2.8 MiB
-   replacing dnf5                            x86_64 5.2.18.0-1.fc42  updates         2.8 MiB
- dnf5-plugins                                x86_64 5.2.18.0-2.fc42  updates         1.3 MiB
-   replacing dnf5-plugins                    x86_64 5.2.18.0-1.fc42  updates         1.3 MiB
- google-chrome-stable                        x86_64 146.0.7680.75-1  google-chrome 394.0 MiB
-   replacing google-chrome-stable            x86_64 145.0.7632.159-1 google-chrome 387.1 MiB
- libdnf5                                     x86_64 5.2.18.0-2.fc42  updates         3.8 MiB
-   replacing libdnf5                         x86_64 5.2.18.0-1.fc42  updates         3.8 MiB
- libdnf5-cli                                 x86_64 5.2.18.0-2.fc42  updates       920.8 KiB
-   replacing libdnf5-cli                     x86_64 5.2.18.0-1.fc42  updates       920.8 KiB
- libdnf5-plugin-expired-pgp-keys             x86_64 5.2.18.0-2.fc42  updates        86.5 KiB
-   replacing libdnf5-plugin-expired-pgp-keys x86_64 5.2.18.0-1.fc42  updates        86.5 KiB
-
-Transaction Summary:
- Upgrading:          6 packages
- Replacing:          6 packages
-
-Total size of inbound packages is 128 MiB. Need to download 128 MiB.
-After this operation, 7 MiB extra will be used (install 403 MiB, remove 396 MiB).
-[1/6] libdnf5-cli-0:5.2.18.0-2.fc42.x86 100% |   1.1 MiB/s | 348.3 KiB |  00m00s
-[2/6] dnf5-0:5.2.18.0-2.fc42.x86_64     100% |   2.1 MiB/s | 934.3 KiB |  00m00s
-[3/6] dnf5-plugins-0:5.2.18.0-2.fc42.x8 100% |   3.0 MiB/s | 469.6 KiB |  00m00s
-[4/6] libdnf5-0:5.2.18.0-2.fc42.x86_64  100% |   2.7 MiB/s |   1.3 MiB |  00m00s
-[5/6] libdnf5-plugin-expired-pgp-keys-0 100% |   1.8 MiB/s |  86.8 KiB |  00m00s
-[6/6] google-chrome-stable-0:146.0.7680 100% |  29.8 MiB/s | 125.0 MiB |  00m04s
---------------------------------------------------------------------------------
-[6/6] Total                             100% |  27.5 MiB/s | 128.0 MiB |  00m05s
-Running transaction
-[ 1/14] Verify package files            100% |  25.0   B/s |   6.0   B |  00m00s
-[ 2/14] Prepare transaction             100% | 315.0   B/s |  12.0   B |  00m00s
-[ 3/14] Upgrading libdnf5-0:5.2.18.0-2. 100% | 383.5 MiB/s |   3.8 MiB |  00m00s
-[ 4/14] Upgrading libdnf5-cli-0:5.2.18. 100% | 226.0 MiB/s | 925.6 KiB |  00m00s
-[ 5/14] Upgrading dnf5-0:5.2.18.0-2.fc4 100% | 128.0 MiB/s |   2.8 MiB |  00m00s
-[ 6/14] Upgrading dnf5-plugins-0:5.2.18 100% | 228.5 MiB/s |   1.4 MiB |  00m00s
-[ 7/14] Upgrading libdnf5-plugin-expire 100% |  21.4 MiB/s |  87.7 KiB |  00m00s
-[ 8/14] Upgrading google-chrome-stable- 100% | 117.7 MiB/s | 394.1 MiB |  00m03s
-[ 9/14] Removing dnf5-plugins-0:5.2.18. 100% |  16.7 KiB/s | 154.0   B |  00m00s
-[10/14] Removing dnf5-0:5.2.18.0-1.fc42 100% |  16.9 KiB/s | 156.0   B |  00m00s
-[11/14] Removing libdnf5-cli-0:5.2.18.0 100% |  14.6 KiB/s |  30.0   B |  00m00s
-[12/14] Removing libdnf5-plugin-expired 100% | 875.0   B/s |   7.0   B |  00m00s
-[13/14] Removing google-chrome-stable-0 100% |  33.4 KiB/s | 274.0   B |  00m00s
-[14/14] Removing libdnf5-0:5.2.18.0-1.f 100% | 116.0   B/s |  56.0   B |  00m00s
-Complete!
+Nothing to do.
 [1;31m Upgrading debian...
 [0mStarting container...                   	[32m [ OK ]
 [0mInstalling basic packages...            	[32m [ OK ]
@@ -176,25 +60,20 @@ distrobox: Installing basic packages...
 /usr/bin/apt-get
 /usr/bin/apt-get
 Get:1 http://deb.debian.org/debian stable-backports InRelease [54.0 kB]
-Hit:2 http://deb.debian.org/debian stable InRelease
-Get:3 https://packages.element.io/debian default InRelease [3,618 B]
+Hit:2 https://packages.element.io/debian default InRelease
+Hit:3 http://deb.debian.org/debian stable InRelease
 Get:4 http://deb.debian.org/debian stable-updates InRelease [47.3 kB]
-Get:5 https://packages.element.io/debian default/main amd64 Packages [1,034 B]
-Get:6 http://deb.debian.org/debian-security stable-security InRelease [43.4 kB]
-Get:7 http://deb.debian.org/debian stable-backports/main amd64 Packages.diff/Index [63.3 kB]
-Get:8 http://deb.debian.org/debian-security stable-security/main amd64 Packages [111 kB]
-Hit:9 https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev antigravity-debian InRelease
-Get:10 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-03-13-0804.32-F-2026-03-13-0218.28.pdiff [10.7 kB]
-Get:10 http://deb.debian.org/debian stable-backports/main amd64 Packages T-2026-03-13-0804.32-F-2026-03-13-0218.28.pdiff [10.7 kB]
-Fetched 335 kB in 1s (369 kB/s)
+Hit:5 http://deb.debian.org/debian-security stable-security InRelease
+Hit:6 https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev antigravity-debian InRelease
+Fetched 101 kB in 1s (116 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-=== 2026-03-13 16:17:04 === /usr/bin/distrobox enter arch --no-tty -- sudo rm -f /var/lib/pacman/db.lck
-=== 2026-03-13 16:17:04 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
+=== 2026-03-14 02:48:25 === /usr/bin/distrobox enter arch --no-tty -- sudo rm -f /var/lib/pacman/db.lck
+=== 2026-03-14 02:48:25 === /usr/bin/distrobox enter arch --no-tty -- yay -Syu --noconfirm
 :: Synchronizing package databases...
  core downloading...
  extra downloading...
@@ -202,14 +81,13 @@ Calculating upgrade...
 :: [1mChecking development packages...[0m
 :: [1mSearching databases for updates...[0m
  there is nothing to do
-=== 2026-03-13 16:17:05 === /usr/bin/ujust update --yes
+=== 2026-03-14 02:48:26 === /usr/bin/ujust update --yes
 error: Justfile does not contain recipe `--yes`
-=== 2026-03-13 16:17:05 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
+=== 2026-03-14 02:48:26 === /usr/bin/distrobox enter fedora -- sudo dnf update -y
 Updating and loading repositories:
- google-chrome                          100% |  11.7 KiB/s |   1.3 KiB |  00m00s
 Repositories loaded.
 Nothing to do.
-=== 2026-03-13 16:17:06 === /usr/bin/distrobox enter debian -- bash -c sudo apt update && sudo apt upgrade -y
+=== 2026-03-14 02:48:26 === /usr/bin/distrobox enter debian -- bash -c sudo apt update && sudo apt upgrade -y
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -232,7 +110,7 @@ Reading state information...
 Calculating upgrade...
 Summary:
   Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 0
-=== 2026-03-13 16:17:07 === chezmoi status
+=== 2026-03-14 02:48:28 === chezmoi status
  A README.md
  A logs
  A logs/auto-update.log
